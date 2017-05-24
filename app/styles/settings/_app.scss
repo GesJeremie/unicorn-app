@@ -1,0 +1,24 @@
+/*------------------------------------*\
+    #APP
+\*------------------------------------*/
+
+/**
+ * Default global spacing units
+ */
+$spacing-unit:          4px !default;
+
+$vertical-margin:       $spacing-unit * 5 !default;
+$horizontal-margin:     $spacing-unit * 5 !default;
+
+/**
+ * Breakpoint widths
+ */
+$small-breakpoint:      480px !default;
+$medium-breakpoint:     760px !default;
+$wide-breakpoint:       960px !default;
+$x-wide-breakpoint:     1160px !default;
+
+/**
+ * Global Functional Spacing Variables
+ */
+$border-radius:         4px !default;

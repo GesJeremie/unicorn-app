@@ -1,0 +1,86 @@
+/*------------------------------------*\
+    #HOME-HERO
+\*------------------------------------*/
+
+.home-hero {}
+
+    .home-hero__details {
+        position: relative;
+        text-align: center;
+        min-height: 570px;
+
+        background: #953163;
+        background-image: -webkit--webkit-linear-gradient(342deg,#D8335B,#953163 90%);
+        background-image: -webkit--moz-linear-gradient(342deg,#D8335B,#953163 90%);
+        background-image: -webkit--o-linear-gradient(342deg,#D8335B,#953163 90%);
+        background-image: -webkit--ms-linear-gradient(342deg,#D8335B,#953163 90%);
+        background-image: -webkit-linear-gradient(108deg,#D8335B,#953163 90%);
+        background-image: -moz--webkit-linear-gradient(342deg,#D8335B,#953163 90%);
+        background-image: -moz--moz-linear-gradient(342deg,#D8335B,#953163 90%);
+        background-image: -moz--o-linear-gradient(342deg,#D8335B,#953163 90%);
+        background-image: -moz--ms-linear-gradient(342deg,#D8335B,#953163 90%);
+        background-image: -ms--webkit-linear-gradient(342deg,#D8335B,#953163 90%);
+        background-image: -ms--moz-linear-gradient(342deg,#D8335B,#953163 90%);
+        background-image: -ms--o-linear-gradient(342deg,#D8335B,#953163 90%);
+        background-image: -ms--ms-linear-gradient(342deg,#D8335B,#953163 90%);
+        background-image: -ms-linear-gradient(108deg,#D8335B,#953163 90%);
+    }
+
+        .home-hero__container {
+            @include center();
+            width: 80%;
+        }
+
+        .home-hero__title {
+            color: white;
+            text-shadow: 0 1px 2px rgba(0,0,0,.14);
+            font-size: 35px;
+            margin-bottom: $vertical-margin;
+        }
+
+        .home-hero__punchline {
+            color: white;
+            font-size: $font-size + 3px;
+            letter-spacing: 1px;
+            text-shadow: 0 1px 2px rgba(0,0,0,.14);
+            margin-bottom: $vertical-margin * 1.5;
+        }
+
+    .home-hero__image {
+        height: 570px;
+        background-image: url('https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf?dpr=2&auto=format&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb&crop=&bg=');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+
+.home-steps {
+    margin-top: 40px;
+    text-align: center;
+}
+
+    .home-steps__artwork {
+        width: 150px;
+        margin-bottom: 30px;
+    }
+
+    .home-steps__title {
+        font-size: $font-size + 8px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    .home-steps__description {
+        text-align: justify;
+        color: $gray;
+        letter-spacing: 1px;
+        font-weight: 300;
+        margin-bottom: 30px;
+
+        p {
+            margin-top: 25px;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+    }

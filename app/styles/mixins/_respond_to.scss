@@ -1,0 +1,31 @@
+/*------------------------------------*\
+   #RESPOND-TO
+\*------------------------------------*/
+
+/**
+ * respond-to
+ *
+ * Used to create a media query within a Sass selector. By default this mixin
+ * also defines basic print styles.
+ */
+
+$breakpoints: (
+  'small': #{$small-breakpoint},
+  'medium': #{$medium-breakpoint},
+  'wide': #{$wide-breakpoint},
+  'x-wide': #{$x-wide-breakpoint},
+);
+
+@mixin respond-to($breakpoint) {
+
+    @if map-has-key($breakpoints, $breakpoint) {
+
+      @media screen and (min-width: map-get($breakpoints, $breakpoint)), print {
+          @content;
+      }
+
+    } @else {
+      @warn 'The breakpoint #{$breakpoint} is not registered in _respond_to.scss';
+    }
+
+}
