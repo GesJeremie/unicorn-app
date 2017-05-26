@@ -56,18 +56,51 @@
 
 
 .home-steps {
-    margin-top: 40px;
+    margin-top: 70px;
+    margin-bottom: 70px;
     text-align: center;
 }
+
+    .home-steps__badge {
+        position: relative;
+        display: inline-block;
+        background: lighten(#AEDDE5, 15%);
+        color: #449BB5;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+
+        i {
+            @include center();
+            font-size: 35px;
+        }
+    }
+
+    .home-steps__badge--small {
+        width: 30px;
+        background: none;
+        color: #9E9D9B;
+        i {
+        font-size: 20px;
+        }
+    }
 
     .home-steps__artwork {
         width: 150px;
         margin-bottom: 30px;
     }
 
+    .home-steps__step {
+        text-align: left;
+    }
+
     .home-steps__title {
-        font-size: $font-size + 8px;
-        margin-top: 40px;
+        font-size: $font-size;
+        color: #449BB5;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: bold;
+        margin-top: 10px;
         margin-bottom: 20px;
     }
 
@@ -86,6 +119,7 @@
     }
 
 .home-stats {
+    position: relative;
     background: #F5F7F9;
     text-align: center;
     padding: 80px 0;
