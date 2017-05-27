@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    #HOME-FOOTER
+\*------------------------------------*/
+
+$home-footer-height:            80px !default;
+$home-footer-color:             $white !default;
+$home-footer-bg-color:          $gray-light !default;
+
+$home-footer-artwork-width:     150px;
+
+.home-footer {
+    position: relative;
+    margin-top: $vertical-margin * 5;
+    height: $home-footer-height;
+    color: $home-footer-color;
+    text-align: center;
+    background: $home-footer-bg-color;
+}
+
+    .home-footer__artwork {
+        @include center('horizontal');
+        position: absolute;
+        top: -60px;
+        text-align: center;
+
+        img {
+            width: 150px;
+        }
+    }

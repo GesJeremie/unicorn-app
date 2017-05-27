@@ -1,0 +1,34 @@
+/*------------------------------------*\
+    #BADGE
+\*------------------------------------*/
+
+$badge-bg-color:    $blue-light !default;
+$badge-color:       $blue !default;
+$badge-size:        60px !default;
+
+$badge-dot-color:   $gray !default;
+
+.badge {
+    display: inline-block;
+    position: relative;
+    width: $badge-size;
+    height: $badge-size;
+    color: $badge-color;
+    background: $badge-bg-color;
+    border-radius: 50%;
+
+    i {
+        @include center();
+        font-size: $font-icon-size + 5px;
+    }
+}
+
+.badge--dot {
+    width: $badge-size / 2;
+    color: $badge-dot-color;
+    background: none;
+
+    i {
+        font-size: $font-icon-size - 10px;
+    }
+}

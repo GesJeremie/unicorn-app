@@ -1,0 +1,22 @@
+/*------------------------------------*\
+    #HOME-STEPS
+\*------------------------------------*/
+
+$home-steps-description-color: $gray !default;
+
+.home-steps {
+    margin: ($vertical-margin * 3.5) 0;
+    text-align: left;
+}
+
+    .home-steps__step {}
+
+    .home-steps__description {
+        margin-bottom: $vertical-margin * 1.5;
+        color: $home-steps-description-color;
+        font-weight: 300;
+
+        p {
+            margin: $vertical-margin;
+        }
+    }

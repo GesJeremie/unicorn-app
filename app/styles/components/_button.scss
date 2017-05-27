@@ -6,77 +6,54 @@
  * Variables
  */
 
-$button-border-radius: 5px !default;
-$button-background-color-base:              $black !default;
-$button-font-size-base:         $font-size !default;
-$button-padding-base:           0 1em !default;
-$button-color:              $white !default;
+$button-border-radius:                  5px !default;
+$button-bg-color:                       $black !default;
+$button-font-size-base:                 $font-size !default;
+$button-color:                          $white !default;
+$button-darken-percentage-hover:        5% !default;
 
+$button-home-hero-create-color:         $pink-dark !default;
+$button-home-hero-create-bg-color:      $white !default;
 
 /**
  * Component
  */
 .button {
+    @extend %light-shadow-button;
     display: inline-block;
     position: relative;
-    margin: 0;
-    padding: 10px 15px;
+    margin: 0 ($horizontal-margin / 2);
+    padding: ($vertical-margin / 2) $horizontal-margin;
     color: $button-color;
     font-size: $button-font-size-base;
-    background-color: $button-background-color-base;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: $button-bg-color;
     border: 0;
     border-radius: $button-border-radius;
     cursor: pointer;
     user-select: none;
     touch-action: manipulation;
-    transition: background-color 0.2s;
-    text-decoration: none;
-}
+    transition: background-color 0.4s;
 
-    .button:hover,
-    .button:focus,
-    .button:active {
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: darken($button-bg-color, $button-darken-percentage-hover);
         text-decoration: none;
         outline: 0;
     }
-
-.button--home-hero {
-    border: 2px solid $white;
-    background: transparent;
-    font-weight: 600;
-    margin-right: 10px;
-    margin-left: 10px;
-    text-transform: capitalize;
-    font-weight: 300;
-    color: white;
-    width: 180px;
-    padding: 5px 15px;
-    text-transform: uppercase;
-    background: white;
-    color: #953163;
-    font-weight: 600;
-
-
-
-    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-    i {
-        display: none;
-        @include center('vertical');
-        left: 5px;
-        vertical-align: middle;
-        margin-right: 4px;
-    }
 }
 
-.button--marketing {
-    padding: 0 14px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 4px;
-    letter-spacing: .025em;
-    background-color: #FF5D19;
-    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: $font-size + 1px;
+
+.button--home-hero-create {
+    color: $button-home-hero-create-color;
+    background: $button-home-hero-create-bg-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: darken($button-home-hero-create-bg-color, $button-darken-percentage-hover);
+    }
 }

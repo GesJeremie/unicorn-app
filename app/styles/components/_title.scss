@@ -1,8 +1,109 @@
-.title {
-    .home-faq & {
-        font-weight: bold;
-        color: #449BB5;
-        margin-bottom: $vertical-margin;
-        letter-spacing: $font-spacing;
+/*------------------------------------*\
+    #TITLE
+\*------------------------------------*/
+
+/**
+ * Variables
+ */
+$title-margin-bottom-default:       $vertical-margin !default;
+
+$title-font-size-huge:              $font-size + 10px !default;
+$title-font-size-huge-desktop:      $font-size + 21px !default;
+
+$title-font-size-large:             $font-size + 6px !default;
+$title-font-size-large-desktop:     $font-size + 10px !default;
+
+$title-font-size-medium:            $font-size !default;
+$title-font-size-medium-desktop:    $font-size + 2px !default;
+
+$title-font-size-small:             $font-size !default;
+
+$title-font-size-tiny:              $font-size - 1px !default;
+
+$title-home-hero-color:             $white !default;
+$title-home-faq-color:              $blue !default;
+$title-home-steps-color:            $blue !default;
+$title-home-stats-color:            $gray !default;
+
+/**
+ * Component
+ */
+.title,
+%title {
+    margin-bottom: $title-margin-bottom-default;
+    font-weight: 600;
+}
+
+.title--huge,
+%title--huge {
+    font-size: $title-font-size-huge;
+
+    @include respond-to('medium') {
+        font-size: $title-font-size-huge-desktop;
     }
+}
+
+.title--large,
+%title--large {
+    font-size: $title-font-size-large;
+
+    @include respond-to('medium') {
+        font-size: $title-font-size-large-desktop;
+    }
+}
+
+.title--medium,
+%title--medium {
+    font-size: $title-font-size-medium;
+
+    @include respond-to('medium') {
+        font-size: $title-font-size-medium-desktop;
+    }
+}
+
+.title--small,
+%title--small {
+    font-size: $title-font-size-small;
+}
+
+.title--tiny,
+%title--tiny {
+    font-size: $title-font-size-tiny;
+}
+
+.title--no-margin,
+%title--no-margin {
+    margin-bottom: 0;
+}
+
+
+.title {
+    .home-hero & {
+        @extend %title--huge;
+        @extend %light-shadow-text;
+        color: $title-home-hero-color;
+        font-weight: 300;
+    }
+
+    .home-faq & {
+        @extend %title--medium;
+        color: $title-home-faq-color;
+    }
+
+
+    .home-steps & {
+        @extend %title--small;
+        margin: ($vertical-margin / 2) 0;
+        color: $title-home-steps-color;
+        letter-spacing: $font-spacing;
+        text-transform: uppercase;
+    }
+
+    .home-stats & {
+        margin-bottom: 0;
+        color: $title-home-stats-color;
+        font-size: $font-size * 2;
+        text-align: center;
+    }
+
 }

@@ -20,7 +20,6 @@
  */
 @import 'mixins/center';
 @import 'mixins/respond_to';
-@import 'mixins/angle';
 
 /**
  * Generic
@@ -39,13 +38,22 @@
  */
 @import 'objects/unstyled_list';
 @import 'objects/unstyled_link';
+@import 'objects/light_shadow_text';
+@import 'objects/light_shadow_button';
 
 /**
  * Components
  */
-@import 'components/home_hero';
 @import 'components/button';
+@import 'components/badge';
+@import 'components/text';
 @import 'components/title';
+@import 'components/home_hero';
+@import 'components/home_steps';
+@import 'components/home_faq';
+@import 'components/home_stats';
+@import 'components/home_footer';
+
 
 /**
  * Trumps
