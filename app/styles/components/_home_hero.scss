@@ -85,10 +85,6 @@
         }
     }
 
-    .home-steps__artwork {
-        width: 150px;
-        margin-bottom: 30px;
-    }
 
     .home-steps__step {
         text-align: left;
@@ -123,7 +119,7 @@
     background: #F5F7F9;
     text-align: center;
     padding: 80px 0;
-    margin-bottom: 200px;
+    margin-bottom: 80px;
 }
     .home-stats__title {
         font-weight: 600;
@@ -137,3 +133,27 @@
         text-transform: uppercase;
         color: $gray;
     }
+
+
+.home-faq {}
+
+.footer {
+    position: relative;
+    background: #F5F7F9;
+    color: white;
+    height: 80px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.home-steps__artwork {
+    @include center('horizontal');
+    position: absolute;
+    top: -60px;
+
+    img {
+        width: 150px;
+    }
+    text-align: center;
+
+}
