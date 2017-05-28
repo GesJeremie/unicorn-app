@@ -1,0 +1,19 @@
+/*------------------------------------*\
+    #LOGO
+\*------------------------------------*/
+
+.logo {}
+
+.logo--small {
+    img {
+        width: 100px;
+    }
+}
+
+.logo--breath-top {
+    margin-top: $vertical-margin;
+}
+
+.logo--breath-bottom {
+    margin-bottom: $vertical-margin * 2;
+}

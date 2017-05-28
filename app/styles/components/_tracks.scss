@@ -2,7 +2,9 @@
     #TRACKS
 \*------------------------------------*/
 
-.tracks {}
+.tracks {
+    display: none;
+}
 
 .tracks__list {
     margin-top: $vertical-margin * 2;
@@ -54,5 +56,5 @@
             width: 90%;
             height: 100%;
             border-radius: 5px;
-            background-color: #2CC990;
+            background-color: $green;
         }
