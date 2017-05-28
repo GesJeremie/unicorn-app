@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('create');
   this.route('unicorn', {path: '/unicorn/:unicorn_name'});
+  this.route('empty');
 });
 
 export default Router;
