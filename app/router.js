@@ -7,8 +7,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('about');
-  this.route('styleguide');
+  this.route('create');
+  this.route('unicorn', {path: '/unicorn/:unicorn_name'});
 });
 
 export default Router;

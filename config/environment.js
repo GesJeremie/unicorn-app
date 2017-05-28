@@ -23,7 +23,12 @@ module.exports = function(environment) {
     }
   };
 
+  if (environment === 'production') {
+    ENV.apiHost = 'http://api.unicornfm.com';
+  }
+
   if (environment === 'development') {
+    ENV.apiHost = 'http://localhost:4000';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -40,10 +45,6 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
-  }
-
-  if (environment === 'production') {
-
   }
 
   return ENV;
