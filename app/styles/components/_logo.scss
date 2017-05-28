@@ -2,11 +2,13 @@
     #LOGO
 \*------------------------------------*/
 
+$logo-small-width: 100px;
+
 .logo {}
 
 .logo--small {
     img {
-        width: 100px;
+        width: $logo-small-width;
     }
 }
 

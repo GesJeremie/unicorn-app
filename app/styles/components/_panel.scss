@@ -2,16 +2,28 @@
     #PANEL
 \*------------------------------------*/
 
+$panel-border-radius: 4px !default;
+$panel-bg-color: $white !default;
+
+// Live
+$panel-live-icon-color: $green !default;
+
+// First setup
+$panel-first-setup-completed-color: $white !default;
+$panel-first-setup-completed-border-radius: 5px !default;
+$panel-first-setup-completed-width: 140px !default;
+$panel-first-setup-completed-yes-color: $green !default;
+$panel-first-setup-completed-no-color: $red !default;
 
 .panel {
+    @extend %light-shadow-box;
     position: relative;
-    background: $white;
-    box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
-    border-radius: 4px;
+    background: $panel-bg-color;
+    border-radius: $panel-border-radius;
 }
 
     .panel__body {
-        padding: 36px;
+        padding: $vertical-margin * 2;
     }
 
 .panel--breath-bottom,
@@ -25,9 +37,9 @@
 
     .panel__icon {
         @include center('vertical');
-        color: $green;
-        font-size: $font-icon-size * 1;
         left: $horizontal-margin * 2;
+        color: $panel-live-icon-color;
+        font-size: $font-icon-size;
     }
 }
 
@@ -47,22 +59,22 @@
 
     .panel__completed {
         display: inline-block;
-        color: $white;
-        border-radius: 5px;
+        margin: ($vertical-margin / 1.5) 0;
+        width: $panel-first-setup-completed-width;
+        color: $panel-first-setup-completed-color;
+        font-size: $font-size - 3px;
         font-weight: 300;
-        width: 140px;
         text-align: center;
         text-transform: uppercase;
-        font-size: $font-size - 3px;
-        margin: ($vertical-margin / 1.5) 0;
+        border-radius: $panel-first-setup-completed-border-radius;
     }
 
     .panel__completed--yes {
-        background: $green;
+        background: $panel-first-setup-completed-yes-color;
     }
 
     .panel__completed--no {
-        background: #EE5F5B;
+        background: $panel-first-setup-completed-no-color;
     }
 
 }

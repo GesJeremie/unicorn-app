@@ -40,11 +40,12 @@
 @import 'objects/unstyled_link';
 @import 'objects/light_shadow_text';
 @import 'objects/light_shadow_button';
+@import 'objects/light_shadow_box';
 
 /**
  * Components
  */
- @import 'components/logo';
+@import 'components/logo';
 @import 'components/layout';
 @import 'components/button';
 @import 'components/badge';

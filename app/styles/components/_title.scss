@@ -25,6 +25,10 @@ $title-home-faq-color:              $blue !default;
 $title-home-steps-color:            $blue !default;
 $title-home-stats-color:            $gray !default;
 
+$title-panel-live-color:            $black !default;
+
+$title-tracks-color:                $black !default;
+
 /**
  * Component
  */
@@ -109,14 +113,14 @@ $title-home-stats-color:            $gray !default;
     .panel--live & {
         @extend %title--large;
         @extend %title--no-margin;
-        font-weight: 400;
-        color: $black;
         margin-bottom: $vertical-margin / 2;
+        color: $title-panel-live-color;
+        font-weight: 400;
     }
 }
 
 .title--tracks {
     @extend %title--no-margin;
-    color: $black;
+    color: $title-tracks-color;
 }
 
