@@ -1,0 +1,58 @@
+/*------------------------------------*\
+    #TRACKS
+\*------------------------------------*/
+
+.tracks {}
+
+.tracks__list {
+    margin-top: $vertical-margin * 2;
+}
+
+    .tracks__artwork {
+        text-align: center;
+
+        img {
+            width: 150px;
+        }
+    }
+
+    .tracks__item {
+        position: relative;
+        opacity: 0.4;
+        @extend %light-shadow-button;
+        background: $white;
+        border-radius: 5px;
+        height: 88px;
+        margin-bottom: $vertical-margin;
+    }
+
+    .tracks__item--current {
+        opacity: 1;
+    }
+
+        .tracks__details {
+            @include center('vertical');
+        }
+
+        .tracks__duration {}
+
+        .tracks__cover {
+            max-height: 88px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .tracks__progress {
+            margin-top: $vertical-margin / 2;
+            height: 5px;
+            border-radius: 5px;
+            background-color: $gray-light;
+            width: 100%;
+        }
+
+        .tracks__progress-bar {
+            width: 90%;
+            height: 100%;
+            border-radius: 5px;
+            background-color: #2CC990;
+        }

@@ -1,0 +1,26 @@
+.unicorn-header {
+    //@extend %light-shadow-button;
+    position: relative;
+    height: 40px;
+    background: white;
+    text-align: center;
+    margin-bottom: $vertical-margin * 2;
+    border-bottom: 1px solid darken($gray-light, 4%);
+}
+
+
+    .unicorn-header__name {
+        @include center('vertical');
+        left: $horizontal-margin;
+        color: $black;
+        font-weight: 300;
+        font-size: $font-size;
+    }
+
+    .unicorn-header__people {
+        @include center('vertical');
+        right: $horizontal-margin;
+        color: $black;
+        font-weight: 300;
+        font-size: $font-size;
+    }
