@@ -6,6 +6,8 @@ export default Ember.Route.extend({
   },
 
   afterModel(model, transition) {
-    this.transitionTo('unicorn', model.get('name'));
+    this.transitionTo('unicorn', model.get('name'), {queryParams: {
+      token: model.get('token')
+    }});
   }
 });

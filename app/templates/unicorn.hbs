@@ -10,7 +10,7 @@
             <div class="panel panel--live">
                 <div class="panel__body">
                     <h3 class="title">Your Unicorn is live</h3>
-                    <p>and her name is new-girl-966</p>
+                    <p>and her name is {{ model.server.name }}</p>
                 </div>
                 <div class="panel__icon"><i class="icon-circle"></i></div>
             </div>
@@ -21,11 +21,11 @@
 
                     <div class="panel__setup">
                         <p class="panel__content">
-                        1. With different devices such as laptop, smartphone or tablet, browse unicornfm.com and join the Unicorn you just created. Remember, the name of your unicorn is <strong>bored-snake-343</strong>.
+                        1. With different devices such as laptop, smartphone or tablet, browse unicornfm.com and join the Unicorn you just created. Remember, the name of your unicorn is <strong>{{ model.server.name }}</strong>.
                         </p>
 
-                        <div class="panel__completed panel__completed--yes">
-                            Completed!
+                        <div class="panel__completed panel__completed--no">
+                            Not Completed
                         </div>
                     </div>
 

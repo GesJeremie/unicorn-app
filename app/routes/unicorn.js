@@ -1,7 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model() {
+  queryParams: {
+    token: ''
+  },
+
+  model(params) {
+    return Ember.RSVP.hash({
+      server: this.get('store').findRecord('server', params.unicorn_name)
+    });
+
+    /*
     return [
       {
         title: "Haezer - Control",
@@ -44,5 +53,12 @@ export default Ember.Route.extend({
         cover: "https://i.ytimg.com/vi/S-L746gczkQ/hqdefault.jpg?sqp=-oaymwEhCNACELwBSFryq4qpAxMIARUAAAAAGAElAADcQj0AgKJD&rs=AOn4CLBISeYBhV1dlGGERVTG0jjN04h66w"
       }
     ];
+    */
+  },
+
+  afterModel(model, transition) {
+    if (transition.queryParams.token !== model.server.get('token')) {
+      this.transitionTo('index');
+    }
   }
 });
