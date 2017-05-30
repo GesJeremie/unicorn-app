@@ -25,15 +25,12 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.apiHost = 'http://api.unicornfm.com';
+    ENV.socketHost = 'ws:api.unicornfm.com/socket';
   }
 
   if (environment === 'development') {
     ENV.apiHost = 'http://localhost:4000';
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.socketHost = 'ws:localhost:4000/socket';
   }
 
   if (environment === 'test') {

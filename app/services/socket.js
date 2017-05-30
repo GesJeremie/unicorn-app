@@ -1,33 +1,56 @@
 import Ember from 'ember';
+import ENV from '../config/environment';
 import { Socket } from 'phoenix';
 
-export default Ember.Service.extend({
+export default Ember.Service.extend(Ember.Evented, {
 
-  init() {
-  },
+  socket: null,
+  isHealthy: false,
 
-  connect() {
-    let options = {};
-    const socket = new Socket('ws:localhost:4000/socket', options);
+  connect(url) {
+    const socket = this._createSocket();
+
     socket.onOpen(() => {
-      console.log('youuu');
+      if (this.isDestroyed || this.isDestroying) {
+        return;
+      }
+
+      this.set('isHealthy', true);
+      this.trigger('open', ...arguments);
     });
+
     socket.onClose(() => {
-      console.log('disconnect')
+      if (this.isDestroyed || this.isDestroying) {
+        return;
+      }
+
+      this.set('isHealthy', false);
+      this.trigger('close', ...arguments);
     });
 
     socket.onError(() => {
-      console.log('error');
+      if (this.isDestroyed || this.isDestroying) {
+        return;
+      }
+
+      this.set('isHealthy', false);
+      this.trigger('error', ...arguments);
     });
 
     this.set('socket', socket);
+
     return socket.connect();
   },
 
-  joinChannel(name, params) {
+  _createSocket() {
+    return new Socket(ENV.socketHost);
+  },
+
+  channel(name, params) {
     const socket = this.get('socket');
-    const channel = socket.channel(name, params);
-    return channel;
+    Ember.assert('must connect to a socket first', socket);
+
+    return socket.channel(name, params);;
   }
 
 });
