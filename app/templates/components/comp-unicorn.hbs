@@ -1,0 +1,103 @@
+<div class="layout layout--light">
+
+    <!-- <div class="unicorn-header">
+        <h3 class="unicorn-header__name">Your Unicorn <strong>curvy-princess-340</strong> is live 🎉</h3>
+        <h3 class="unicorn-header__people">Currently <strong>2 devices</strong> connected</h3>
+    </div> -->
+    <br/><br/><br/>
+    <div class="grid grid--center">
+        <div class="grid__cell grid__cell--50">
+            <div class="panel panel--live">
+                <div class="panel__body">
+                    <h3 class="title">Your Unicorn is live</h3>
+                    <p>and her name is {{ model.server.name }}</p>
+                </div>
+                <div class="panel__icon"><i class="icon-circle"></i></div>
+            </div>
+
+            <div class="panel panel--first-setup">
+                <div class="panel__body">
+                    <h3 class="title">Finish Setup</h3>
+
+                    <div class="panel__setup">
+                        <p class="panel__content">
+                        1. With different devices such as laptop, smartphone or tablet, browse unicornfm.com and join the Unicorn you just created. Remember, the name of your unicorn is <strong>{{ model.server.name }}</strong>.
+                        </p>
+
+                        {{#if isStepJoinCompleted}}
+                            <div class="panel__completed panel__completed--yes">
+                                Completed
+                            </div>
+                        {{else}}
+                            <div class="panel__completed panel__completed--no">
+                                Not Completed
+                            </div>
+                        {{/if}}
+                    </div>
+
+                    <div class="panel__setup">
+                        <div class="panel__content">2. Time for black magic, search your favorite track or artist and click <strong>push</strong>.</div>
+
+                        {{#if isStepPushCompleted}}
+                            <div class="panel__completed panel__completed--yes">
+                                Completed
+                            </div>
+                        {{else}}
+                            <div class="panel__completed panel__completed--no">
+                                Not Completed
+                            </div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid--center">
+        <div class="grid__cell grid__cell--40">
+
+
+            <div class="tracks">
+
+                <div class="tracks__list">
+                    <div class="tracks__item tracks__item--current">
+                        <div class="grid grid--flush">
+                            <div class="grid__cell grid__cell--30">
+                                <img class="tracks__cover" src="https://i.ytimg.com/vi/z7Sf891yNZE/hqdefault.jpg?custom=true&w=336&h=188&stc=true&jpg444=true&pt=325&jpgq=90&dct_sp=110&sigh=LA8r2Nfmqz3BU0tWv47GutYbIEQ" />
+                            </div>
+                            <div class="grid__cell grid__cell--70">
+                                <div class="tracks__details">
+                                    <h3 class="title title--tracks">Haezer - Troublemaker feat. Tumi (Official Video)</h3>
+                                    <h4 class="tracks__duration">0:00 / 3:26</h4>
+                                    <div class="tracks__progress">
+                                        <div class="tracks__progress-bar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {{#each model as |track| }}
+                        <div class="tracks__item">
+                            <div class="grid grid--flush">
+                                <div class="grid__cell grid__cell--30">
+                                    <img class="tracks__cover" src="{{ track.cover }}" />
+                                </div>
+                                <div class="grid__cell grid__cell--70">
+                                    <div class="tracks__details-container">
+                                        <div class="tracks__details">
+                                            <h3 class="title title--tracks">{{ track.title }}</h3>
+                                            <h4 class="tracks__duration">{{ track.duration }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
