@@ -9,19 +9,18 @@ export default Ember.Component.extend({
 
   didInsertElement() {
     this.get('socket').connect();
-    const channel = this.get('socket').channel('room:lobby');
 
-    console.log(channel);
+    const channel = this.get('socket').channel('unicorn:' + this.get('model.server.name'));
 
+    /**
+     * Register listeners
+     */
     channel.on('new_device', (payload) => {
-      if (this.get('isFirstSetup') && !this.get('isStepJoinCompleted')) {
-        this.set('isStepJoinCompleted', true);
-      }
+      this.onNewDevice(payload)
     });
 
     channel.on('new_song', (payload) => {
-      console.log('new song to play');
-      alert('play song');
+      this.onNewSong(payload);
     });
 
     channel.join();
@@ -36,5 +35,17 @@ export default Ember.Component.extend({
         console.log('problem to join the channel');
       });
     */
+  },
+
+  onNewSong(payload) {
+    if (this.get('isFirstSetup') && !this.get('isStepPushCompleted')) {
+      this.set('isStepPushCompleted', true);
+    }
+  },
+
+  onNewDevice(payload) {
+    if (this.get('isFirstSetup') && !this.get('isStepJoinCompleted')) {
+      this.set('isStepJoinCompleted', true);
+    }
   }
 });

@@ -1,0 +1,20 @@
+{
+  "name": "unicorn",
+  "description": "Small description for unicorn goes here",
+  "main": "",
+  "authors": [
+    "Ges Jérémie <ges.jeremie@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/GesJeremie/unicorn-app",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "plyr": "^2.0.13"
+  }
+}

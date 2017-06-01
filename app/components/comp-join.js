@@ -6,7 +6,10 @@ export default Ember.Component.extend({
 
   didInsertElement() {
     this.get('socket').connect();
-    const channel = this.get('socket').channel('room:lobby');
+
+    const serverName = this.get('model.server.name');
+    const channel = this.get('socket').channel('unicorn:' + serverName);
+
     this.set('channel', channel);
 
     this.get('channel').join();
