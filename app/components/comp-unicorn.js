@@ -7,6 +7,8 @@ export default Ember.Component.extend({
   isStepJoinCompleted: false,
   isStepPushCompleted: false,
 
+  player: null,
+
   didInsertElement() {
     this.get('socket').connect();
 
@@ -24,28 +26,40 @@ export default Ember.Component.extend({
     });
 
     channel.join();
-
-    /*
-    channel.join().
-      receive("ok", () => {
-        // Set status "not live" to "live"
-        console.log('awesome');
-      })
-      .receive("error", () => {
-        console.log('problem to join the channel');
-      });
-    */
   },
 
-  onNewSong(payload) {
+  onNewSong(song) {
     if (this.get('isFirstSetup') && !this.get('isStepPushCompleted')) {
       this.set('isStepPushCompleted', true);
+
+      this.set('player', this.setupPlayer());
     }
+
+    this.play(song);
   },
 
   onNewDevice(payload) {
     if (this.get('isFirstSetup') && !this.get('isStepJoinCompleted')) {
       this.set('isStepJoinCompleted', true);
     }
+  },
+
+  setupPlayer() {
+    return plyr.setup('#player', {
+      autoplay: true,
+      volume: 10,
+      hideControls: false,
+    })[0];
+  },
+
+  play(song) {
+    this.get('player').source({
+      type: 'video',
+      title: song.title,
+      sources: [{
+        src: song.id,
+        type: 'youtube'
+      }]
+    });
   }
 });

@@ -2,8 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   socket: Ember.inject.service(),
+  store: Ember.inject.service(),
   channel: null,
-  tracks: null,
+  songs: null,
+  search: null,
+  searching: false,
 
   didInsertElement() {
     this.get('socket').connect();
@@ -19,18 +22,24 @@ export default Ember.Component.extend({
   },
 
   actions: {
-    pushNewSound() {
-      this.get('channel').push('new_song', {title: "Simple test"});
+    pushNewSound(song) {
+      console.log(song);
+      this.get('channel').push('new_song', {
+        id: song.get('id'),
+        title: song.get('title'),
+        thumbnail: song.get('thumbnail')
+      });
     },
 
     searchSong() {
-      let search = this.get('search'),
-          key = 'AIzaSyB7T2tSvrpH_L-GF2wzu62e2sfezISNw_k';
+      let search = this.get('search');
 
-      Ember.$.get('https://www.googleapis.com/youtube/v3/search', {part: 'snippet', q: search, key: key, type: 'video'}).then((response) => {
-        this.set('tracks', response.items);
+      this.set('searching', true);
+
+      this.get('store').query('song', {query: search}).then((response) => {
+        this.set('searching', false);
+        this.set('songs', response)
       });
-
     }
   }
 });

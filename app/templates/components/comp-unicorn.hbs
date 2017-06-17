@@ -77,24 +77,7 @@
                         </div>
                     </div>
 
-
-                    {{#each model as |track| }}
-                        <div class="tracks__item">
-                            <div class="grid grid--flush">
-                                <div class="grid__cell grid__cell--30">
-                                    <img class="tracks__cover" src="{{ track.cover }}" />
-                                </div>
-                                <div class="grid__cell grid__cell--70">
-                                    <div class="tracks__details-container">
-                                        <div class="tracks__details">
-                                            <h3 class="title title--tracks">{{ track.title }}</h3>
-                                            <h4 class="tracks__duration">{{ track.duration }}</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    {{/each}}
+                    <video id="player"></video>
 
                 </div>
             </div>
