@@ -2,8 +2,7 @@
     #TRACKS
 \*------------------------------------*/
 
-.tracks {
-}
+.tracks {}
 
 .tracks__list {
     margin-top: $vertical-margin * 2;
@@ -18,9 +17,9 @@
     }
 
     .tracks__item {
+        @extend %light-shadow-button;
         position: relative;
         opacity: 0.4;
-        @extend %light-shadow-button;
         background: $white;
         border-radius: 5px;
         height: 88px;
@@ -33,6 +32,7 @@
 
         .tracks__details {
             @include center('vertical');
+            width: 65%;
         }
 
         .tracks__duration {}

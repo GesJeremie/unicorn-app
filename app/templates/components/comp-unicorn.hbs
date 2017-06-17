@@ -15,72 +15,79 @@
                 <div class="panel__icon"><i class="icon-circle"></i></div>
             </div>
 
-            <div class="panel panel--first-setup">
-                <div class="panel__body">
-                    <h3 class="title">Finish Setup</h3>
+            {{#unless isSetupFinished}}
+                <div class="panel panel--first-setup">
+                    <div class="panel__body">
+                        <h3 class="title">Finish Setup</h3>
 
-                    <div class="panel__setup">
-                        <p class="panel__content">
-                        1. With different devices such as laptop, smartphone or tablet, browse unicornfm.com and join the Unicorn you just created. Remember, the name of your unicorn is <strong>{{ model.server.name }}</strong>.
-                        </p>
+                        <div class="panel__setup">
+                            <p class="panel__content">
+                            1. With different devices such as laptop, smartphone or tablet, browse unicornfm.com and join the Unicorn you just created. Remember, the name of your unicorn is <strong>{{ model.server.name }}</strong>.
+                            </p>
 
-                        {{#if isStepJoinCompleted}}
-                            <div class="panel__completed panel__completed--yes">
-                                Completed
-                            </div>
-                        {{else}}
-                            <div class="panel__completed panel__completed--no">
-                                Not Completed
-                            </div>
-                        {{/if}}
-                    </div>
+                            {{#if isStepJoinCompleted}}
+                                <div class="panel__completed panel__completed--yes">
+                                    Completed
+                                </div>
+                            {{else}}
+                                <div class="panel__completed panel__completed--no">
+                                    Not Completed
+                                </div>
+                            {{/if}}
+                        </div>
 
-                    <div class="panel__setup">
-                        <div class="panel__content">2. Time for black magic, search your favorite track or artist and click <strong>push</strong>.</div>
+                        <div class="panel__setup">
+                            <div class="panel__content">2. Time for black magic, search your favorite track or artist and click <strong>push</strong>.</div>
 
-                        {{#if isStepPushCompleted}}
-                            <div class="panel__completed panel__completed--yes">
-                                Completed
-                            </div>
-                        {{else}}
-                            <div class="panel__completed panel__completed--no">
-                                Not Completed
-                            </div>
-                        {{/if}}
+                            {{#if isStepPushCompleted}}
+                                <div class="panel__completed panel__completed--yes">
+                                    Completed
+                                </div>
+                            {{else}}
+                                <div class="panel__completed panel__completed--no">
+                                    Not Completed
+                                </div>
+                            {{/if}}
+                        </div>
                     </div>
                 </div>
-            </div>
+            {{/unless}}
         </div>
     </div>
 
+    <div id="player">
+        <video></video>
+    </div>
+
     <div class="grid grid--center">
+
         <div class="grid__cell grid__cell--40">
 
 
-            <div class="tracks">
+            {{#if hasCurrentSong}}
+                <div class="tracks">
 
-                <div class="tracks__list">
-                    <div class="tracks__item tracks__item--current">
-                        <div class="grid grid--flush">
-                            <div class="grid__cell grid__cell--30">
-                                <img class="tracks__cover" src="https://i.ytimg.com/vi/z7Sf891yNZE/hqdefault.jpg?custom=true&w=336&h=188&stc=true&jpg444=true&pt=325&jpgq=90&dct_sp=110&sigh=LA8r2Nfmqz3BU0tWv47GutYbIEQ" />
-                            </div>
-                            <div class="grid__cell grid__cell--70">
-                                <div class="tracks__details">
-                                    <h3 class="title title--tracks">Haezer - Troublemaker feat. Tumi (Official Video)</h3>
-                                    <h4 class="tracks__duration">0:00 / 3:26</h4>
-                                    <div class="tracks__progress">
-                                        <div class="tracks__progress-bar"></div>
+                    <div class="tracks__list">
+                        <div class="tracks__item tracks__item--current">
+                            <div class="grid grid--flush">
+                                <div class="grid__cell grid__cell--30">
+                                    <img class="tracks__cover" src="{{ song.thumbnail }}" />
+                                </div>
+                                <div class="grid__cell grid__cell--70">
+                                    <div class="tracks__details">
+                                        <h3 class="title title--tracks">{{ song.title }}</h3>
+                                        <h4 class="tracks__duration">{{ song.currentTime }} / {{ song.durationTime }}</h4>
+                                        <div class="tracks__progress">
+                                            <div class="tracks__progress-bar"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
-
-                    <video id="player"></video>
-
                 </div>
-            </div>
+            {{/if}}
         </div>
     </div>
 </div>

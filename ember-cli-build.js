@@ -21,6 +21,7 @@ module.exports = function(defaults) {
 
   app.import('bower_components/plyr/dist/plyr.js');
   app.import('bower_components/plyr/dist/plyr.css');
+  app.import('bower_components/moment/moment.js');
 
   return app.toTree();
 };
