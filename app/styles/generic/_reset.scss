@@ -28,16 +28,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /**
- * Remove border-radius from form controls
- */
-button,
-select, optgroup,
-textarea, input:not([type=radio]) {
-    border-radius: 0;
-}
-
-
-/**
  * Remove special-browser treatment certain form controls
  * See: http://stackoverflow.com/questions/7599533/ios-forces-rounded-corners-and-glare-on-inputs
  */

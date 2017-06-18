@@ -78,3 +78,10 @@ $panel-first-setup-completed-no-color: $red !default;
     }
 
 }
+
+.panel--huge-input {
+    margin-top: $vertical-margin * 5;
+    .panel__body {
+        padding: 0;
+    }
+}

@@ -12,8 +12,12 @@ $button-font-size-base:                 $font-size !default;
 $button-color:                          $white !default;
 $button-darken-percentage-hover:        5% !default;
 
+$button-danger-bg-color:                $red !default;
+$button-success-bg-color:               $green !default;
+
 $button-home-hero-create-color:         $pink-dark !default;
 $button-home-hero-create-bg-color:      $white !default;
+
 
 /**
  * Component
@@ -46,6 +50,34 @@ $button-home-hero-create-bg-color:      $white !default;
     }
 }
 
+.button--disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.button--danger {
+    background-color: $button-danger-bg-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: darken($button-danger-bg-color, $button-darken-percentage-hover);
+        text-decoration: none;
+        outline: 0;
+    }
+}
+
+.button--success {
+    background-color: $button-success-bg-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: darken($button-success-bg-color, $button-darken-percentage-hover);
+        text-decoration: none;
+        outline: 0;
+    }
+}
 
 .button--home-hero-create {
     color: $button-home-hero-create-color;

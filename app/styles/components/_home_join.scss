@@ -1,0 +1,23 @@
+/*------------------------------------*\
+    #HOME-JOIN
+\*------------------------------------*/
+
+$home-join-close-button-color: lighten($gray, 30%);
+
+.home-join {}
+
+    .home-join__button {
+        margin-top: $vertical-margin;
+        text-align: center;
+    }
+
+    .home-join__close {
+        padding: $vertical-margin $horizontal-margin;
+        font-size: $font-icon-size * 2;
+        text-align: right;
+    }
+
+        .home-join__close-button {
+            text-decoration: none;
+            color: $home-join-close-button-color;
+        }

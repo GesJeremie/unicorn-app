@@ -16,6 +16,8 @@
   ],
   "dependencies": {
     "plyr": "^2.0.13",
-    "moment": "^2.18.1"
+    "moment": "^2.18.1",
+    "animatedmodal": "*",
+    "animate.css": "^3.5.2"
   }
 }
