@@ -33,9 +33,14 @@ $home-hero-punchline-color:         $white !default;
         }
 
     .home-hero__image {
+        display: none;
         height: $home-hero-height;
         background-size: cover;
         background-image: url('/cover-home.jpg');
         background-repeat: no-repeat;
         background-position: center center;
+
+        @include respond-to('medium') {
+            display: block;
+        }
     }

@@ -80,6 +80,31 @@ $button-home-hero-create-bg-color:      $white !default;
 }
 
 .button--home-hero-create {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: $vertical-margin;
+
+    @include respond-to('small') {
+        width: auto;
+        margin: 0 ($horizontal-margin / 2);
+    }
+
+
+    @include respond-to('medium') {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: $vertical-margin;
+    }
+
+    @include respond-to('x-wide') {
+        width: auto;
+        margin: 0 ($horizontal-margin / 2);
+    }
+}
+
+.button--home-hero-join {
+    width: 90%;
+    margin: 0 auto;
     color: $button-home-hero-create-color;
     background: $button-home-hero-create-bg-color;
 
@@ -87,5 +112,20 @@ $button-home-hero-create-bg-color:      $white !default;
     &:focus,
     &:active {
         background-color: darken($button-home-hero-create-bg-color, $button-darken-percentage-hover);
+    }
+
+    @include respond-to('small') {
+        width: auto;
+        margin: 0 ($horizontal-margin / 2);
+    }
+
+    @include respond-to('medium') {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    @include respond-to('x-wide') {
+        width: auto;
+        margin: 0 ($horizontal-margin / 2);
     }
 }
