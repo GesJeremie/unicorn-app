@@ -7,17 +7,7 @@
  */
 
 $button-border-radius:                  5px !default;
-$button-bg-color:                       $black !default;
-$button-font-size-base:                 $font-size !default;
-$button-color:                          $white !default;
 $button-darken-percentage-hover:        5% !default;
-
-$button-danger-bg-color:                $red !default;
-$button-success-bg-color:               $green !default;
-
-$button-home-hero-create-color:         $pink-dark !default;
-$button-home-hero-create-bg-color:      $white !default;
-
 
 /**
  * Component
@@ -28,12 +18,12 @@ $button-home-hero-create-bg-color:      $white !default;
     position: relative;
     margin: 0 ($horizontal-margin / 2);
     padding: ($vertical-margin / 2) $horizontal-margin;
-    color: $button-color;
-    font-size: $button-font-size-base;
+    color: $white;
+    font-size: $font-size;
     font-weight: 600;
     text-transform: uppercase;
     text-decoration: none;
-    background-color: $button-bg-color;
+    background-color: $black;
     border: 0;
     border-radius: $button-border-radius;
     cursor: pointer;
@@ -44,7 +34,7 @@ $button-home-hero-create-bg-color:      $white !default;
     &:hover,
     &:focus,
     &:active {
-        background-color: darken($button-bg-color, $button-darken-percentage-hover);
+        background-color: darken($black, $button-darken-percentage-hover);
         text-decoration: none;
         outline: 0;
     }
@@ -56,24 +46,24 @@ $button-home-hero-create-bg-color:      $white !default;
 }
 
 .button--danger {
-    background-color: $button-danger-bg-color;
+    background-color: $red;
 
     &:hover,
     &:focus,
     &:active {
-        background-color: darken($button-danger-bg-color, $button-darken-percentage-hover);
+        background-color: darken($red, $button-darken-percentage-hover);
         text-decoration: none;
         outline: 0;
     }
 }
 
 .button--success {
-    background-color: $button-success-bg-color;
+    background-color: $green;
 
     &:hover,
     &:focus,
     &:active {
-        background-color: darken($button-success-bg-color, $button-darken-percentage-hover);
+        background-color: darken($green, $button-darken-percentage-hover);
         text-decoration: none;
         outline: 0;
     }
@@ -83,17 +73,30 @@ $button-home-hero-create-bg-color:      $white !default;
     width: 90%;
     margin: 0 auto;
     margin-bottom: $vertical-margin;
+    background: $pink-light;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: darken($pink-light, $button-darken-percentage-hover);
+    }
 
     @include respond-to('small') {
         width: auto;
         margin: 0 ($horizontal-margin / 2);
     }
 
-
     @include respond-to('medium') {
         width: 90%;
         margin: 0 auto;
         margin-bottom: $vertical-margin;
+        background: $black;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: darken($black, $button-darken-percentage-hover);
+        }
     }
 
     @include respond-to('x-wide') {
@@ -105,13 +108,13 @@ $button-home-hero-create-bg-color:      $white !default;
 .button--home-hero-join {
     width: 90%;
     margin: 0 auto;
-    color: $button-home-hero-create-color;
-    background: $button-home-hero-create-bg-color;
+    background: $white;
+    color: $black;
 
     &:hover,
     &:focus,
     &:active {
-        background-color: darken($button-home-hero-create-bg-color, $button-darken-percentage-hover);
+        background-color: darken($white, $button-darken-percentage-hover);
     }
 
     @include respond-to('small') {
@@ -122,6 +125,7 @@ $button-home-hero-create-bg-color:      $white !default;
     @include respond-to('medium') {
         width: 90%;
         margin: 0 auto;
+        color: $pink-dark;
     }
 
     @include respond-to('x-wide') {
