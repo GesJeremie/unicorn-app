@@ -27,5 +27,9 @@ module.exports = function(defaults) {
   app.import('bower_components/animatedmodal/animatedModal.js');
   app.import('bower_components/animate.css/animate.css');
 
+  app.import('bower_components/owl.carousel/dist/owl.carousel.js');
+  app.import('bower_components/owl.carousel/dist/assets/owl.carousel.css');
+  app.import('bower_components/owl.carousel/dist/assets/owl.theme.default.css');
+
   return app.toTree();
 };

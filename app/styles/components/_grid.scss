@@ -1,0 +1,39 @@
+/*------------------------------------*\
+    #GRID
+\*------------------------------------*/
+
+@if $av-enable-grid-center {
+
+    @each $alias, $query in $av-breakpoints {
+        @media #{$query} {
+
+            .#{avCreateBlockClassName('center')}-at-#{$alias} {
+                text-align: center;
+
+                > .#{avCreateElementClassName()} {
+                    text-align: left;
+                }
+            }
+
+        }
+    }
+}
+
+@if $av-enable-grid-right {
+
+    @each $alias, $query in $av-breakpoints {
+        @media #{$query} {
+
+            .#{avCreateBlockClassName('right')}-at-#{$alias} {
+              text-align: right;
+
+              > .#{avCreateElementClassName()} {
+                text-align: left;
+              }
+            }
+
+        }
+    }
+
+}
+

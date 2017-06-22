@@ -2,18 +2,21 @@
     #HOME-STEPS
 \*------------------------------------*/
 
-$home-steps-description-color: $gray !default;
-
 .home-steps {
     margin: ($vertical-margin * 3.5) 0;
-    text-align: left;
 }
 
-    .home-steps__step {}
+    .home-steps__step {
+        text-align: center;
+
+        @include respond-to('wide') {
+            text-align: left;
+        }
+    }
 
     .home-steps__description {
         margin-bottom: $vertical-margin * 1.5;
-        color: $home-steps-description-color;
+        color: $gray;
         font-weight: 300;
 
         p {
