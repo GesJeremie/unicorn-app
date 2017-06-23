@@ -7,9 +7,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('create');
   this.route('unicorn', {path: '/unicorn/:unicorn_name'});
-  this.route('join', {path: '/join/:unicorn_name'});
+  this.route('unicorn-create', {path: '/unicorn/create'});
+  this.route('unicorn-join', {path: '/unicorn/join/:unicorn_name'});
+  this.route('unicorn-pick', {path: '/unicorn/pick'});
 });
 
 export default Router;

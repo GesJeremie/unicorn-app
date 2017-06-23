@@ -12,6 +12,9 @@ $horizontal-margin:     $spacing-unit * 5 !default;
 
 /**
  * Breakpoint widths
+ *
+ * Note: If you change this configuration,
+ * update the file app/breakpoints.js
  */
 $small-breakpoint:      480px !default;
 $medium-breakpoint:     760px !default;

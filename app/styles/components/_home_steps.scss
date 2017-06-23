@@ -7,9 +7,12 @@
 }
 
     .home-steps__step {
+        width: 90%;
+        margin: 0 auto;
         text-align: center;
 
         @include respond-to('wide') {
+            width: 100%;
             text-align: left;
         }
     }

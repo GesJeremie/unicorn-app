@@ -2,9 +2,59 @@
     #HOME-FAQ
 \*------------------------------------*/
 
-.home-faq {}
+.home-faq {
+    padding: $vertical-margin 0;
+
+    @include respond-to('wide') {
+        background: $white;
+    }
+}
+
+    .home-faq__question {
+        padding-top: 2px;
+        position: relative;
+        margin: 0 auto;
+        border-radius: 5px;
+        background: $white;
+        text-align: left;
+        border-bottom: 2px solid $gray-light;
+        margin: 0 -12px;
+    }
+
+    .home-faq__question-label {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 0 25px;
+
+        .title {
+            margin: 0;
+            padding: 0;
+            font-size: $font-size * 1.2;
+        }
+
+        .icon {
+            position: absolute;
+            right: $horizontal-margin;
+            top: $spacing-unit * 4;
+            color: #D5D7DB;
+            font-size: $font-size * 1.5;
+        }
+
+        .icon-arrow-up {
+            color: $blue;
+        }
+    }
+
+    .home-faq__question--opened {
+        background: $blue-light;
+    }
 
     .home-faq__description {
         margin-top: $vertical-margin / 2;
         margin-bottom: $vertical-margin;
+        padding: 0 25px;
+    }
+
+    .home-faq__sub {
+        padding: 0 25px;
     }

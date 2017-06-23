@@ -6,8 +6,8 @@
                 <div class="home-hero__container">
                     <h2 class="title">UnicornFM</h2>
                     <p class="home-hero__punchline">Helps you to create instant collaborative playlists for your party, work, whatever.</p>
-                    {{#link-to "create" class="button button--home-hero-create"}}Create a Unicorn{{/link-to}}
-                    <a id="trigger-join-unicorn" class="button button--home-hero-join" href="#animatedModal" {{action "onClickTriggerJoinUnicorn"}}>Join a Unicorn</a>
+                    {{#link-to "unicorn-create" class="button button--home-hero-create"}}Create a Unicorn{{/link-to}}
+                    {{#link-to "unicorn-pick" class="button button--home-hero-join"}}Join a Unicorn{{/link-to}}
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
     </div>
 </div>
 
-{{#home-steps}}{{/home-steps}}
+{{#index-steps}}{{/index-steps}}
 
 <div class="home-stats">
     <div class="grid grid--center">
@@ -34,7 +34,7 @@
                 </div>
                 <div class="grid__cell grid__cell--33-at-medium">
                     <div class="text text--center">
-                        <a class="button">Create your unicorn</a>
+                        {{#link-to "unicorn-create" class="button"}}Create a Unicorn{{/link-to}}
                     </div>
                 </div>
             </div>
@@ -44,69 +44,38 @@
 
 <div class="home-faq">
     <div class="grid--center">
-        <div class="grid__cell grid__cell--80">
+        <div class="grid__cell grid__cell--80--at-wide">
             <div class="grid grid--center">
-                <div class="grid__cell grid__cell--40">
-                    <h3 class="title">Why should I use it?</h3>
+                <div class="grid__cell grid__cell--40-at-wide" >
+                    {{#accordion-content title="Why should I use it"}}
+                        <strong class="home-faq__sub">Hosting a party?</strong>
+                        <p class="home-faq__description">Spin a new Unicorn, let your friends join it, boom, everyone can push their favorite tracks.</p>
 
-                    <strong class="home-faq__sub">Hosting a party?</strong>
-                    <p class="home-faq__description">Spin a new Unicorn, let your friends join it, boom, everyone can push their favorite tracks.</p>
+                        <strong class="home-faq__sub">Bored at the office?</strong>
+                        <p class="home-faq__description">Create a Unicorn, let your coworkers push some tracks, you just created a collaborative playlist.</p>
 
-                    <strong class="home-faq__sub">Bored at the office?</strong>
-                    <p class="home-faq__description">Create a Unicorn, let your coworkers push some tracks, you just created a collaborative playlist.</p>
-
-                    <strong class="home-faq__sub">Is your friend in love with music ?</strong>
-                    <p class="home-faq__description"> Make a new Unicorn, let them push some songs, it's time to discover new artists.</p>
+                        <strong class="home-faq__sub">Is your friend in love with music ?</strong>
+                        <p class="home-faq__description"> Make a new Unicorn, let them push some songs, it's time to discover new artists.</p>
+                    {{/accordion-content}}
                 </div>
 
-                <div class="grid__cell grid__cell--10">
-                    <!-- Empty block -->
-                </div>
+                <div class="grid__cell grid__cell--40-at-wide">
 
-                <div class="grid__cell grid__cell--40">
-                    <h3 class="title">Where do the tracks come from?</h3>
-                    <p class="home-faq__description">Both the player of the Unicorn and the search system use youtube, you should find most of the music you fancy.</p>
+                    {{#accordion-content title="Where do the tracks come from?"}}
+                        <p class="home-faq__description">Both the player of the Unicorn and the search system use youtube, you should find most of the music you fancy.</p>
+                    {{/accordion-content}}
 
+                    {{#accordion-content title="Why can't I play a music stored in my device?"}}
+                        <p class="home-faq__description">We designed UnicornFM to be as simple as possible, we don't want you to download an app to use it.</p>
+                    {{/accordion-content}}
 
-                    <h3 class="title">Why can't I play a music stored in my device?</h3>
-                    <p class="home-faq__description">We designed UnicornFM to be as simple as possible, we don't want you to download an app to use it.</p>
-
-                    <h3 class="title">Why can't I create an Unicorn with a phone/tablet?</h3>
-                    <p class="home-faq__description">The browsers on these devices block our autoplay feature, we can't do anything at the moment to unlock the limitation.</p>
-
+                    {{#accordion-content title="Why can't I create an Unicorn with a phone/tablet?"}}
+                        <p class="home-faq__description">The browsers on these devices block our autoplay feature, we can't do anything at the moment to unlock the limitation.</p>
+                    {{/accordion-content}}
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-<div id="animatedModal">
-    <div class="home-join__close">
-        <a href="#" class="close-animatedModal home-join__close-button">
-           <i class="icon-cancel"></i>
-       </a>
-    </div>
-
-       <div class="modal-content">
-            <div class="grid grid--center">
-                <div class="grid__cell grid__cell--60">
-                    <div class="panel panel--huge-input">
-                        <div class="panel__body">
-                            {{input class="input input--unicorn-to-join js-join-unicorn" placeholder="sad-story-222" value=unicornToJoin}}
-                        </div>
-                    </div>
-
-                    <div class="home-join__button">
-                        {{#if unicornToJoinExists}}
-                            {{#link-to "join" unicornToJoin class="button button--success"}} Join Unicorn {{unicornToJoin}}{{/link-to}}
-                        {{else}}
-                            <a class="button button--danger button--disabled">The Unicorn {{unicornToJoin}} doesn't exist</a>
-                        {{/if}}
-                    </div>
-
-                </div>
-            </div>
-       </div>
 </div>
 
 <div class="home-footer">

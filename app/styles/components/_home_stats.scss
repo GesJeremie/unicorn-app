@@ -5,14 +5,20 @@
 $home-stats-bg-color: $gray-light !default;
 
 .home-stats {
+    display: none;
     position: relative;
     background: $home-stats-bg-color;
     text-align: center;
     padding: 80px 0;
     margin-bottom: 80px;
+
+    @include respond-to('wide') {
+        display: block;
+    }
 }
 
     .home-stats__description {
+        margin-bottom: $vertical-margin;
         text-align: center;
         text-transform: uppercase;
         color: $gray;

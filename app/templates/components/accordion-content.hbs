@@ -1,0 +1,12 @@
+<div {{action "onClickTitle"}} class="home-faq__question {{if isShown "home-faq__question--opened" "home-faq__question--closed"}}">
+
+  <div class="home-faq__question-label">
+    <h3 class="title">{{ title }}</h3>
+    <i class="icon icon-{{if isShown "arrow-up" "arrow-down"}}"></i>
+  </div>
+
+  {{#if isShown}}
+    {{yield}}
+  {{/if}}
+
+</div>
