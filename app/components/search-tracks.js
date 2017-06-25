@@ -1,14 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  socket: Ember.inject.service(),
+
   store: Ember.inject.service(),
-  songs: null,
+
   search: null,
   searching: false,
+  songs: null,
 
-  didInsertElement() {
-  },
+  didInsertElement() {},
 
   actions: {
     searchSong() {
@@ -16,9 +16,13 @@ export default Ember.Component.extend({
 
       this.set('searching', true);
 
-      this.get('store').query('song', {query: search}).then((response) => {
+      this.get('store').query('song', {query: search})
+      .then((response) => {
         this.set('searching', false);
         this.set('songs', response)
+      })
+      .catch((error) => {
+        this.set('searching', false);
       });
     }
   }

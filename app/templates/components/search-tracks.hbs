@@ -3,10 +3,13 @@
 {{input type="text" value=search enter="searchSong" class="input input--pick"}}
 
 {{#if searching}}
-    Loading results ...
+    {{#loading-text}}{{/loading-text}}
 {{/if}}
 
 <br/>
+
 {{#each songs as |song|}}
+    {{song.thumbnail}}
+
     {{song.title}} <button {{action "pushNewSound" song}}>Push sound</button><br/>
 {{/each}}
