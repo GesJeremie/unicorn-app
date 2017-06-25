@@ -124,3 +124,12 @@ $title-tracks-color:                $black !default;
     color: $title-tracks-color;
 }
 
+.title--pick {
+    text-align: center;
+    color: $black;
+    font-weight: 300;
+    font-size: $font-size * 2;
+    margin: $vertical-margin auto;
+    line-height: 35px;
+}
+

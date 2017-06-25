@@ -2,14 +2,23 @@
     #LOGO
 \*------------------------------------*/
 
-$logo-small-width: 100px;
 
 .logo {}
 
 .logo--small {
     img {
-        width: $logo-small-width;
+        width: 100px;
     }
+}
+
+.logo--medium {
+    img {
+        width: 200px;
+    }
+}
+
+.logo--center {
+    text-align: center;
 }
 
 .logo--breath-top {
@@ -18,4 +27,14 @@ $logo-small-width: 100px;
 
 .logo--breath-bottom {
     margin-bottom: $vertical-margin * 2;
+}
+
+
+.logo--pick {
+    margin-top: $vertical-margin * 3;
+    text-align: center;
+
+    img {
+        width: 200px;
+    }
 }

@@ -133,3 +133,24 @@ $button-darken-percentage-hover:        5% !default;
         margin: 0 ($horizontal-margin / 2);
     }
 }
+
+.button--no-margin-horizontal {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.button--pick {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    border-radius: 0;
+    padding: $vertical-margin $horizontal-margin;
+
+    @include respond-to('wide') {
+        position: relative;
+        padding: ($vertical-margin / 2) $horizontal-margin;
+        width: auto;
+        border-radius: $button-border-radius;
+    }
+}

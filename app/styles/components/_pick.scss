@@ -1,0 +1,11 @@
+.pick {}
+
+    .pick__search {
+        text-align: center;
+        margin-top: $vertical-margin;
+    }
+
+    .pick__search-exists {
+        text-align: left;
+        margin-top: $vertical-margin / 2;
+    }

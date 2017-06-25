@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('unicorn-create', {path: '/unicorn/create'});
   this.route('unicorn-join', {path: '/unicorn/join/:unicorn_name'});
   this.route('unicorn-pick', {path: '/unicorn/pick'});
+  this.route('unicorn-pick.js');
 });
 
 export default Router;
