@@ -1,0 +1,31 @@
+<div class="layout layout--light">
+    <div class="join">
+        <div class="join__connect">
+            <span class="join__connect-text">Currently playing <strong>Hazer - Minted (remix @Apucolops)</strong></span>
+        </div>
+
+
+        <br/><br/>
+
+        <div class="grid grid--center">
+            <div class="grid__cell grid__cell--50">
+                <div class="panel panel--live">
+                    <div class="panel__body">
+                        <h3 class="title">Connected</h3>
+                        <p>to unicorn dull-zebra-568</p>
+                    </div>
+                    <div class="panel__icon"><i class="icon-circle"></i></div>
+                </div>
+
+                <div class="panel panel--search-song">
+                    <div class="panel__body">
+                        <h2 class="title title--search-song">Search a song to push to the unicorn</h2>
+
+                        {{#unicorn-join/search-tracks push=(action "pushSong")}}{{/unicorn-join/search-tracks}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

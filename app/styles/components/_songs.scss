@@ -1,0 +1,34 @@
+/*------------------------------------*\
+    #SONGS
+\*------------------------------------*/
+
+
+.songs {}
+
+.songs__song {
+    position: relative;
+    border-bottom: 3px solid $gray-light;
+    padding: ($vertical-margin) 0;
+}
+
+    .songs__song-picture {
+        display: inline-block;
+        height: 100%;
+
+        img {
+            @extend %light-shadow-box;
+            border-radius: 5px;
+            max-width: 100%;
+        }
+    }
+
+    .songs__song-details {
+        @include center('vertical');
+        display: inline-block;
+        color: $gray;
+    }
+
+        .songs__song-details-title {
+            margin-bottom: $vertical-margin / 1.5;
+        }
+        .songs__song-details-push {}

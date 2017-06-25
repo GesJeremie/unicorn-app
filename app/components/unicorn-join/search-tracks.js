@@ -8,7 +8,8 @@ export default Ember.Component.extend({
   searching: false,
   songs: null,
 
-  didInsertElement() {},
+  didInsertElement() {
+  },
 
   actions: {
     searchSong() {
@@ -24,6 +25,10 @@ export default Ember.Component.extend({
       .catch((error) => {
         this.set('searching', false);
       });
+    },
+
+    onClickPushSong(song) {
+      this.get('push')(song);
     }
   }
 });

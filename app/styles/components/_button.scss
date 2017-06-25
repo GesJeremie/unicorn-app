@@ -57,7 +57,8 @@ $button-darken-percentage-hover:        5% !default;
     }
 }
 
-.button--success {
+.button--success,
+%button--success {
     background-color: $green;
 
     &:hover,
@@ -153,4 +154,9 @@ $button-darken-percentage-hover:        5% !default;
         width: auto;
         border-radius: $button-border-radius;
     }
+}
+
+.button--push-song {
+    margin-left: 0;
+    margin-right: 0;
 }

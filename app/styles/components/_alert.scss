@@ -1,0 +1,15 @@
+/*------------------------------------*\
+    #ALERT
+\*------------------------------------*/
+
+.alert {
+    padding: ($vertical-margin / 2) ($horizontal-margin / 2);
+    border-radius: 5px;
+}
+
+.alert--loading {
+    margin-top: $vertical-margin;
+    border: 1px solid darken($green-light, 5%);
+    background-color: $green-light;
+    color: $green;
+}
