@@ -1,11 +1,12 @@
 import Ember from 'ember';
 
 /**
- * Manage the home steps to switch to carousel
+ * Manage the steps to switch to carousel
  * on mobile.
  */
 export default Ember.Component.extend({
 
+  media: null,
   isCarouselInitialized: false,
 
   didInsertElement() {
@@ -50,7 +51,7 @@ export default Ember.Component.extend({
   },
 
   isViewportWide() {
-    return $(window).width() > 960;
+    return !this.get('media.isSmall') && !this.get('media.isMedium');
   }
 
 });

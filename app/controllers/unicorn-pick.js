@@ -51,6 +51,16 @@ export default Ember.Controller.extend({
     .catch((response) => {
       this.set('unicorn', null);
     });
-  })
+  }),
+
+  actions: {
+    onSubmitSearch() {
+      if (!this.get('unicornExists')) {
+        return;
+      }
+
+      this.transitionToRoute('unicorn-join', this.get('unicorn.name'));
+    }
+  }
 
 });

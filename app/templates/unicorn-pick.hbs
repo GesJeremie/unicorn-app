@@ -10,8 +10,8 @@
                 <div class="pick__search">
                     <h1 class="title title--pick">Type the name of the <strong>unicorn</strong><br/> you want to join</h1>
 
-                    {{#input-autofocus media=media target="#search"}}
-                        {{input value=unicornSearch id="search" class="input input--pick" autocomplete="off"}}
+                    {{#input-autofocus target="#search"}}
+                        {{input action="onSubmitSearch" value=unicornSearch id="search" class="input input--pick" autocomplete="off"}}
                     {{/input-autofocus}}
 
                     <div class="pick__search-exists">
