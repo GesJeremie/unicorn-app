@@ -1,0 +1,12 @@
+<h1>{{ model.server.name }}</h1>
+
+{{input type="text" value=search enter="searchSong" class="input input--pick"}}
+
+{{#if searching}}
+    Loading results ...
+{{/if}}
+
+<br/>
+{{#each songs as |song|}}
+    {{song.title}} <button {{action "pushNewSound" song}}>Push sound</button><br/>
+{{/each}}
