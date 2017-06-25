@@ -6,8 +6,12 @@ import Ember from 'ember';
  */
 export default Ember.Component.extend({
 
-  media: null,
+  media: Ember.inject.service(),
+
   isCarouselInitialized: false,
+
+  isViewportSmall: Ember.computed.or('media.isSmall', 'media.isMedium'),
+  isViewportWide: Ember.computed.not('isViewportSmall'),
 
   didInsertElement() {
     this.registerEventResize();
@@ -20,12 +24,12 @@ export default Ember.Component.extend({
   },
 
   onResize() {
-    if (this.isViewportWide() && this.get('isCarouselInitialized')) {
+    if (this.get('isViewportWide') && this.get('isCarouselInitialized')) {
       this.removeCarousel();
       return;
     }
 
-    if (this.isViewportWide()) {
+    if (this.get('isViewportWide')) {
       return;
     }
 
@@ -48,10 +52,6 @@ export default Ember.Component.extend({
     $('#slides').removeClass('owl-carousel').owlCarousel('destroy');
 
     this.set('isCarouselInitialized', false);
-  },
-
-  isViewportWide() {
-    return !this.get('media.isSmall') && !this.get('media.isMedium');
   }
 
 });
