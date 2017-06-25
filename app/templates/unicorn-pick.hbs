@@ -17,10 +17,10 @@
                     <div class="pick__search-exists">
                         {{#if unicornExists}}
                             {{#link-to "unicorn-join" unicorn.name class="button button--pick button--success button--no-margin-horizontal"}}
-                                The unicorn {{unicornSearchClean}} exists!
+                                The unicorn {{should-show-unicorn-search media unicornSearchClean}} exists!
                             {{/link-to}}
                         {{else}}
-                            <a href="#" class="button button--pick button--danger button--disabled button--no-margin-horizontal">The unicorn {{unicornSearchClean}} doesn't exist!</a>
+                            <a href="#" class="button button--pick button--danger button--disabled button--no-margin-horizontal">The unicorn {{should-show-unicorn-search media unicornSearchClean}} doesn't exist!</a>
                         {{/if}}
                     </div>
                 </div>
