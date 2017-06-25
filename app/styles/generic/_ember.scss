@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    #EMBER
+\*------------------------------------*/
+
+/**
+ * Styles related to ember
+ */
+
+/**
+ * 1. Fix touch click on mobile
+ */
+
+/* [1] */
+[data-ember-action] {
+    cursor: pointer;
+
+    @include respond-to('wide') {
+        cursor: default;
+    }
+}

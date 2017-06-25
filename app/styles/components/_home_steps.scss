@@ -4,6 +4,12 @@
 
 .home-steps {
     margin: ($vertical-margin * 3.5) 0;
+
+    @include respond-to('wide') {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
     .home-steps__step {
@@ -12,7 +18,7 @@
         text-align: center;
 
         @include respond-to('wide') {
-            width: 100%;
+            width: 80%;
             text-align: left;
         }
     }

@@ -2,6 +2,10 @@
     #HOME-FAQ
 \*------------------------------------*/
 
+/**
+ * 1. Reset padding-left grid__cell avalanche
+ */
+
 .home-faq {
     padding: $vertical-margin 0;
 
@@ -18,7 +22,12 @@
         background: $white;
         text-align: left;
         border-bottom: 2px solid $gray-light;
-        margin: 0 -12px;
+        margin-left: -12px; /* [1] */
+
+        @include respond-to('wide') {
+            border-bottom: none;
+            margin-left: 0;
+        }
     }
 
     .home-faq__question-label {
@@ -38,6 +47,10 @@
             top: $spacing-unit * 4;
             color: #D5D7DB;
             font-size: $font-size * 1.5;
+
+            @include respond-to('wide') {
+                display: none;
+            }
         }
 
         .icon-arrow-up {
@@ -46,7 +59,8 @@
     }
 
     .home-faq__question--opened {
-        background: $blue-light;
+        background: lighten($blue-light, 3%);
+        border-bottom: 2px solid $blue-light;
     }
 
     .home-faq__description {
