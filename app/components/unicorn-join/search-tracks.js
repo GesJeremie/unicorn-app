@@ -25,10 +25,10 @@ export default Ember.Component.extend({
       .catch((error) => {
         this.set('searching', false);
       });
-    },
-
-    onClickPushSong(song) {
-      this.get('push')(song);
     }
+
+    /*onClickPushSong(song) {
+      this.get('push')(song);
+    }*/
   }
 });

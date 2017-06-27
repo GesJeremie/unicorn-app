@@ -1,0 +1,20 @@
+<div class="songs__song">
+    <div class="grid grid--center">
+
+        <div class="grid__cell grid__cell--30">
+            <div class="songs__song-picture">
+                <img src="{{song.thumbnail}}" />
+            </div>
+        </div>
+
+        <div class="grid__cell grid__cell--70">
+            <div class="songs__song-details">
+                <div class="songs__song-details-title">{{song.title}}</div>
+                <div class="songs__song-details-push">
+                    <button {{action "onClickPushSong" song}} class="button button--push-song">{{ song.pushButtonLabel }}</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

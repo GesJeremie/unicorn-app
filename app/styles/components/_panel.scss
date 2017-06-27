@@ -83,7 +83,11 @@
     .panel__icon {
         @include center('vertical');
         left: $horizontal-margin * 2;
-        color: $panel-live-icon-color;
+        color: $green;
         font-size: $font-icon-size;
     }
+}
+
+.panel--search-song {
+    margin-bottom: $vertical-margin * 3;
 }

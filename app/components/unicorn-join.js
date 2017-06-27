@@ -16,15 +16,25 @@ export default Ember.Component.extend({
     this.get('channel').join();
 
     this.get('channel').push('new_device', {});
+
+    this.get('channel').on('new_song', (payload) => {
+      this.set('currentSong', payload);
+    });
   },
 
   actions: {
-    pushSong(song) {
+    onPushSong(song) {
+
+      song.set('pushButtonLabel', 'Pushing ...');
+
       this.get('channel').push('new_song', {
         id: song.get('id'),
         title: song.get('title'),
         thumbnail: song.get('thumbnail')
+      }).receive('ok', (reply) => {
+        song.set('pushButtonLabel', 'Push Song');
       });
+
     }
   }
 });

@@ -1,7 +1,7 @@
 <div class="layout layout--light">
     <div class="join">
         <div class="join__connect">
-            <span class="join__connect-text">Currently playing <strong>Hazer - Minted (remix @Apucolops)</strong></span>
+            <span class="join__connect-text">Currently playing <strong>{{ currentSong.title }}</strong></span>
         </div>
 
         <div class="grid grid--center">
@@ -9,7 +9,7 @@
                 <div class="panel panel--join-connected">
                     <div class="panel__body">
                         <h3 class="title title--connected">Connected</h3>
-                        <p>to unicorn dull-zebra-568</p>
+                        <p>to unicorn {{model.server.name}}</p>
                     </div>
                     <div class="panel__icon"><i class="icon-circle"></i></div>
                 </div>
@@ -18,7 +18,7 @@
                     <div class="panel__body">
                         <h2 class="title title--search-song">Search a song to push to the unicorn</h2>
 
-                        {{#unicorn-join/search-tracks push=(action "pushSong")}}{{/unicorn-join/search-tracks}}
+                        {{unicorn-join/search-tracks onPushSong=(action "onPushSong")}}
                     </div>
                 </div>
             </div>
