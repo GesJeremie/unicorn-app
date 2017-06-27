@@ -25,7 +25,7 @@ export default Ember.Component.extend({
   target: '',
 
   /**
-   * Check if the viewport is small (isSmall || isMedium)
+   * Check if the viewport is small (media.isSmall || media.isMedium)
    * @return {Boolean}
    */
   isViewportSmall: Ember.computed.or('media.isSmall', 'media.isMedium'),

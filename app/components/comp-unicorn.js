@@ -5,36 +5,41 @@ export default Ember.Component.extend({
 
   isSetupJoinCompleted: false,
   isSetupPushCompleted: false,
-  isSetupFinished: false,
+  isSetupFinished: Ember.computed.and('isSetupJoinCompleted', 'isSetupPushCompleted'),
 
   song: null,
   hasCurrentSong: Ember.computed.notEmpty('song'),
 
   player: null,
 
+  channel: null,
+
   didInsertElement() {
-    this.get('socket').connect();
-
-    const channel = this.get('socket').channel('unicorn:' + this.get('model.server.name'));
-
-    /**
-     * Register listeners
-     */
-    channel.on('new_device', (payload) => {
-      this.onNewDevice(payload)
-    });
-
-    channel.on('new_song', (payload) => {
-      this.onNewSong(payload);
-    });
-
-    channel.join();
+    this.setupSocket();
+    this.setupChannel();
+    this.setupChannelEvents();
   },
 
-  onNewSong(song) {
+  setupSocket() {
+    this.get('socket').connect();
+  },
+
+  setupChannel() {
+    const channel = this.get('socket').channel('unicorn:' + this.get('model.server.name'));
+
+    channel.join()
+    this.set('channel', channel);
+  },
+
+  setupChannelEvents() {
+    this.get('channel').on('new_device', this.onChannelNewDevice.bind(this));
+    this.get('channel').on('new_song', this.onChannelNewSong.bind(this));
+
+  },
+
+  onChannelNewSong(song) {
     if (!this.get('isSetupFinished')) {
       this.set('isStepPushCompleted', true);
-      this.set('isSetupFinished', true);
       this.setupPlayer();
     }
 
@@ -43,7 +48,7 @@ export default Ember.Component.extend({
     this.play(song);
   },
 
-  onNewDevice(payload) {
+  onChannelNewDevice(payload) {
     if (!this.get('isSetupFinished')) {
       this.set('isStepJoinCompleted', true);
     }

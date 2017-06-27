@@ -21,8 +21,8 @@ export default Ember.Component.extend({
   loadingText: '',
 
   /**
-   * Flag to know how much dots are
-   * stored currently
+   * Flag to know how many dots are
+   * currently stored
    * @type {Number}
    */
   dots: 0,
@@ -65,6 +65,7 @@ export default Ember.Component.extend({
       this.incrementProperty('dots');
       return;
     }
+
     this.set('loadingText', text);
     this.set('dots', 0);
 
