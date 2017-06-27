@@ -1,25 +1,60 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+
+  /**
+   * Services
+   */
   socket: Ember.inject.service(),
   store: Ember.inject.service(),
+
+  /**
+   * The socket channel to use
+   */
   channel: null,
 
+  /**
+   * Setup the component
+   */
   didInsertElement() {
-    this.get('socket').connect();
-
-    const serverName = this.get('model.server.name');
-    const channel = this.get('socket').channel('unicorn:' + serverName);
-
-    this.set('channel', channel);
-
-    this.get('channel').join();
+    this.setupSocket();
+    this.setupChannel();
+    this.setupEventsChannel();
 
     this.get('channel').push('new_device', {});
+  },
 
-    this.get('channel').on('new_song', (payload) => {
-      this.set('currentSong', payload);
-    });
+  /**
+   * Connect the socket
+   */
+  setupSocket() {
+    this.get('socket').connect();
+  },
+
+  /**
+   * Join right channel
+   */
+  setupChannel() {
+    const serverName = this.get('model.server.name'),
+          channel = this.get('socket').channel('unicorn:' + serverName);
+
+    channel.join();
+    this.set('channel', channel);
+  },
+
+  /**
+   * Register channel events to listen
+   */
+  setupEventsChannel() {
+    this.get('channel').on('new_song', this.onChannelNewSong.bind(this));
+  },
+
+  /**
+   * When the channel received a new song
+   * @param {Object} song
+   */
+  onChannelNewSong(song) {
+    this.set('currentSong', song);
   },
 
   actions: {
