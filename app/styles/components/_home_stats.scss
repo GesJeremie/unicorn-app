@@ -7,10 +7,10 @@ $home-stats-bg-color: $gray-light !default;
 .home-stats {
     display: none;
     position: relative;
-    background: $home-stats-bg-color;
-    text-align: center;
-    padding: 80px 0;
     margin-bottom: 80px;
+    padding: 80px 0;
+    text-align: center;
+    background: $home-stats-bg-color;
 
     @include respond-to('wide') {
         display: block;
@@ -19,7 +19,7 @@ $home-stats-bg-color: $gray-light !default;
 
     .home-stats__description {
         margin-bottom: $vertical-margin;
+        color: $gray;
         text-align: center;
         text-transform: uppercase;
-        color: $gray;
     }

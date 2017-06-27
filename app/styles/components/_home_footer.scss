@@ -2,19 +2,13 @@
     #HOME-FOOTER
 \*------------------------------------*/
 
-$home-footer-height:            80px !default;
-$home-footer-color:             $white !default;
-$home-footer-bg-color:          $gray-light !default;
-
-$home-footer-artwork-width:     150px;
-
 .home-footer {
     position: relative;
     margin-top: $vertical-margin * 5;
-    height: $home-footer-height;
-    color: $home-footer-color;
+    height: 80px;
+    color: $white;
     text-align: center;
-    background: $home-footer-bg-color;
+    background: $gray-light;
 }
 
     .home-footer__artwork {

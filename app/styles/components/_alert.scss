@@ -9,7 +9,7 @@
 
 .alert--loading {
     margin-top: $vertical-margin;
-    border: 1px solid darken($green-light, 5%);
-    background-color: $green-light;
     color: $green;
+    background-color: $green-light;
+    border: 1px solid darken($green-light, 5%);
 }

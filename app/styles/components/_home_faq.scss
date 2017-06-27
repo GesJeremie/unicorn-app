@@ -15,18 +15,18 @@
 }
 
     .home-faq__question {
-        padding-top: 2px;
         position: relative;
         margin: 0 auto;
-        border-radius: 5px;
-        background: $white;
-        text-align: left;
-        border-bottom: 2px solid $gray-light;
         margin-left: -12px; /* [1] */
+        padding-top: 2px;
+        text-align: left;
+        background: $white;
+        border-bottom: 2px solid $gray-light;
+        border-radius: 5px;
 
         @include respond-to('wide') {
-            border-bottom: none;
             margin-left: 0;
+            border-bottom: 0;
         }
     }
 
@@ -43,8 +43,8 @@
 
         .icon {
             position: absolute;
-            right: $horizontal-margin;
             top: $spacing-unit * 4;
+            right: $horizontal-margin;
             color: #D5D7DB;
             font-size: $font-size * 1.5;
 

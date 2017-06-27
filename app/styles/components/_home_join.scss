@@ -18,6 +18,6 @@ $home-join-close-button-color: lighten($gray, 30%);
     }
 
         .home-join__close-button {
-            text-decoration: none;
             color: $home-join-close-button-color;
+            text-decoration: none;
         }

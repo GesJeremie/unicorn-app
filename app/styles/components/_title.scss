@@ -5,8 +5,6 @@
 /**
  * Variables
  */
-$title-margin-bottom-default:       $vertical-margin !default;
-
 $title-font-size-huge:              $font-size + 14px !default;
 $title-font-size-huge-desktop:      $font-size + 21px !default;
 
@@ -17,24 +15,14 @@ $title-font-size-medium:            $font-size !default;
 $title-font-size-medium-desktop:    $font-size + 2px !default;
 
 $title-font-size-small:             $font-size !default;
-
 $title-font-size-tiny:              $font-size - 1px !default;
-
-$title-home-hero-color:             $white !default;
-$title-home-faq-color:              $blue !default;
-$title-home-steps-color:            $blue !default;
-$title-home-stats-color:            $gray !default;
-
-$title-panel-live-color:            $black !default;
-
-$title-tracks-color:                $black !default;
 
 /**
  * Component
  */
 .title,
 %title {
-    margin-bottom: $title-margin-bottom-default;
+    margin-bottom: $vertical-margin;
     font-weight: 600;
 }
 
@@ -80,56 +68,55 @@ $title-tracks-color:                $black !default;
     margin-bottom: 0;
 }
 
+.title--home-hero {
+    @extend %title--huge;
+    @extend %light-shadow-text;
+    color: $white;
+    font-weight: 300;
+}
 
-.title {
-    .home-hero & {
-        @extend %title--huge;
-        @extend %light-shadow-text;
-        color: $title-home-hero-color;
-        font-weight: 300;
-    }
+.title--home-faq {
+    @extend %title--small;
+    margin: ($vertical-margin / 2) 0;
+    color: $blue;
+    letter-spacing: $font-spacing;
+    text-transform: uppercase;
+}
 
-    .home-faq & {
-        @extend %title--medium;
-        color: $title-home-faq-color;
-    }
+.title--home-steps {
+    @extend %title--small;
+    margin: ($vertical-margin / 2) 0;
+    color: $blue;
+    letter-spacing: $font-spacing;
+    text-transform: uppercase;
+}
 
-
-    .home-steps & {
-        @extend %title--small;
-        margin: ($vertical-margin / 2) 0;
-        color: $title-home-steps-color;
-        letter-spacing: $font-spacing;
-        text-transform: uppercase;
-    }
-
-    .home-stats & {
-        margin-bottom: 0;
-        color: $title-home-stats-color;
-        font-size: $font-size * 2;
-        text-align: center;
-    }
-
-    .panel--live & {
-        @extend %title--large;
-        @extend %title--no-margin;
-        margin-bottom: $vertical-margin / 2;
-        color: $title-panel-live-color;
-        font-weight: 400;
-    }
+.title--home-stats {
+    margin-bottom: 0;
+    color: $gray;
+    font-size: $font-size * 2;
+    text-align: center;
 }
 
 .title--tracks {
     @extend %title--no-margin;
-    color: $title-tracks-color;
+    color: $black;
 }
 
 .title--pick {
-    text-align: center;
-    color: $black;
-    font-weight: 300;
-    font-size: $font-size * 2;
     margin: $vertical-margin auto;
+    color: $black;
+    font-size: $font-size * 2;
+    font-weight: 300;
     line-height: 35px;
+    text-align: center;
+}
+
+.title--connected {
+    @extend %title--large;
+    @extend %title--no-margin;
+    margin-bottom: $vertical-margin / 2;
+    color: $black;
+    font-weight: 400;
 }
 

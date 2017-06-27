@@ -7,8 +7,8 @@
 
 .songs__song {
     position: relative;
-    border-bottom: 3px solid $gray-light;
     padding: ($vertical-margin) 0;
+    border-bottom: 3px solid $gray-light;
 }
 
     .songs__song-picture {
@@ -17,8 +17,8 @@
 
         img {
             @extend %light-shadow-box;
-            border-radius: 5px;
             max-width: 100%;
+            border-radius: 5px;
         }
     }
 
@@ -31,4 +31,5 @@
         .songs__song-details-title {
             margin-bottom: $vertical-margin / 1.5;
         }
+
         .songs__song-details-push {}

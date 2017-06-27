@@ -10,6 +10,7 @@ linters:
 
   ElsePlacement:
     enabled: true
+    style: new_line
 
   EmptyRule:
     enabled: false
@@ -81,7 +82,6 @@ linters:
       - font-style
       - font-family
       - font-weight
-      - font-variant
       - font-smoothing
       -
       - line-height
@@ -148,7 +148,11 @@ linters:
       - border-radius-bottomleft
       - border-radius-topleft
       -
-      - box-shadow
+      - box-sizing
+      - vertical-align
+      - overflow
+      - overflow-x
+      - overflow-y
 
   SelectorFormat:
     enabled: true
@@ -173,9 +177,6 @@ linters:
       - font-family
       - background-color
 
-  PseudoElement:
-    enabled: false
-
   # These default settings may be problematic to implementors. They are not
   # ommitted so that they may be adjusted as needed during an implementation.
   #
@@ -188,3 +189,6 @@ linters:
   PropertySpelling:
     enabled: true
     extra_properties: [] # Add experimental CSS to this array, if needed
+
+  PseudoElement:
+    enabled: false

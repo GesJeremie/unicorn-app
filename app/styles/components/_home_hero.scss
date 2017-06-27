@@ -4,34 +4,29 @@
 
 $home-hero-height: 570px !default;
 
-$home-hero-details-bg-color-light:  $pink-light !default;
-$home-hero-details-bg-color-dark:   $pink-dark !default;
-
-$home-hero-punchline-color:         $white !default;
-
 .home-hero {}
 
     .home-hero__details {
         position: relative;
         height: $home-hero-height;
         text-align: center;
-        background-image: url('/cover-home.jpg');
-        background-position: center center;
         background-size: cover;
+        background-image: url($path-cover-home);
+        background-position: center center;
 
         @include respond-to('medium') {
-            background: $home-hero-details-bg-color-dark;
-            background-image: linear-gradient(342deg, $home-hero-details-bg-color-light, $home-hero-details-bg-color-dark 90%);
+            background: $pink-dark;
+            background-image: linear-gradient(342deg, $pink-light, $pink-dark 90%);
         }
     }
 
         .home-hero__overlay {
-            background: $black;
             position: absolute;
             top: 0;
             right: 0;
             bottom: 0;
             left: 0;
+            background: $black;
             opacity: 0.6;
 
             @include respond-to('medium') {
@@ -47,7 +42,7 @@ $home-hero-punchline-color:         $white !default;
         .home-hero__punchline {
             @extend %light-shadow-text;
             margin-bottom: $vertical-margin * 1.5;
-            color: $home-hero-punchline-color;
+            color: $white;
             font-size: $font-size + 3px;
             letter-spacing: $font-spacing;
         }
@@ -56,7 +51,7 @@ $home-hero-punchline-color:         $white !default;
         display: none;
         height: $home-hero-height;
         background-size: cover;
-        background-image: url('/cover-home.jpg');
+        background-image: url($path-cover-home);
         background-repeat: no-repeat;
         background-position: center center;
 

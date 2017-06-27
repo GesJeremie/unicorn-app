@@ -34,8 +34,8 @@ $button-darken-percentage-hover:        5% !default;
     &:hover,
     &:focus,
     &:active {
-        background-color: darken($black, $button-darken-percentage-hover);
         text-decoration: none;
+        background-color: darken($black, $button-darken-percentage-hover);
         outline: 0;
     }
 }
@@ -51,8 +51,8 @@ $button-darken-percentage-hover:        5% !default;
     &:hover,
     &:focus,
     &:active {
-        background-color: darken($red, $button-darken-percentage-hover);
         text-decoration: none;
+        background-color: darken($red, $button-darken-percentage-hover);
         outline: 0;
     }
 }
@@ -64,33 +64,28 @@ $button-darken-percentage-hover:        5% !default;
     &:hover,
     &:focus,
     &:active {
-        background-color: darken($green, $button-darken-percentage-hover);
         text-decoration: none;
+        background-color: darken($green, $button-darken-percentage-hover);
         outline: 0;
     }
 }
 
 .button--home-hero-create {
-    width: 90%;
     margin: 0 auto;
     margin-bottom: $vertical-margin;
+    width: 90%;
     background: $pink-light;
 
-    &:hover,
-    &:focus,
-    &:active {
-        background-color: darken($pink-light, $button-darken-percentage-hover);
-    }
 
     @include respond-to('small') {
-        width: auto;
         margin: 0 ($horizontal-margin / 2);
+        width: auto;
     }
 
     @include respond-to('medium') {
-        width: 90%;
         margin: 0 auto;
         margin-bottom: $vertical-margin;
+        width: 90%;
         background: $black;
 
         &:hover,
@@ -101,22 +96,22 @@ $button-darken-percentage-hover:        5% !default;
     }
 
     @include respond-to('x-wide') {
-        width: auto;
         margin: 0 ($horizontal-margin / 2);
+        width: auto;
     }
-}
-
-.button--home-hero-join {
-    width: 90%;
-    margin: 0 auto;
-    background: $white;
-    color: $black;
 
     &:hover,
     &:focus,
     &:active {
-        background-color: darken($white, $button-darken-percentage-hover);
+        background-color: darken($pink-light, $button-darken-percentage-hover);
     }
+}
+
+.button--home-hero-join {
+    margin: 0 auto;
+    width: 90%;
+    color: $black;
+    background: $white;
 
     @include respond-to('small') {
         width: auto;
@@ -133,20 +128,27 @@ $button-darken-percentage-hover:        5% !default;
         width: auto;
         margin: 0 ($horizontal-margin / 2);
     }
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: darken($white, $button-darken-percentage-hover);
+    }
+
 }
 
 .button--no-margin-horizontal {
-    margin-left: 0;
     margin-right: 0;
+    margin-left: 0;
 }
 
 .button--pick {
     position: absolute;
     bottom: 0;
+    padding: $vertical-margin $horizontal-margin;
     width: 100%;
     text-align: center;
     border-radius: 0;
-    padding: $vertical-margin $horizontal-margin;
 
     @include respond-to('wide') {
         position: relative;
@@ -157,6 +159,6 @@ $button-darken-percentage-hover:        5% !default;
 }
 
 .button--push-song {
-    margin-left: 0;
     margin-right: 0;
+    margin-left: 0;
 }

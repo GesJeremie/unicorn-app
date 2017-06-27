@@ -2,19 +2,16 @@
     #BADGE
 \*------------------------------------*/
 
-$badge-bg-color:    $blue-light !default;
-$badge-color:       $blue !default;
 $badge-size:        60px !default;
 
-$badge-dot-color:   $gray !default;
 
 .badge {
     display: inline-block;
     position: relative;
     width: $badge-size;
     height: $badge-size;
-    color: $badge-color;
-    background: $badge-bg-color;
+    color: $blue;
+    background: $blue-light;
     border-radius: 50%;
 
     i {
@@ -25,7 +22,7 @@ $badge-dot-color:   $gray !default;
 
 .badge--dot {
     width: $badge-size / 2;
-    color: $badge-dot-color;
+    color: $gray;
     background: none;
 
     i {

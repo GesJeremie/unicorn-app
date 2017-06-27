@@ -6,15 +6,15 @@
     margin: ($vertical-margin * 3.5) 0;
 
     @include respond-to('wide') {
-        width: 90%;
-        margin-left: auto;
         margin-right: auto;
+        margin-left: auto;
+        width: 90%;
     }
 }
 
     .home-steps__step {
-        width: 90%;
         margin: 0 auto;
+        width: 90%;
         text-align: center;
 
         @include respond-to('wide') {

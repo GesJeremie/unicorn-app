@@ -2,24 +2,11 @@
     #PANEL
 \*------------------------------------*/
 
-$panel-border-radius: 4px !default;
-$panel-bg-color: $white !default;
-
-// Live
-$panel-live-icon-color: $green !default;
-
-// First setup
-$panel-first-setup-completed-color: $white !default;
-$panel-first-setup-completed-border-radius: 5px !default;
-$panel-first-setup-completed-width: 140px !default;
-$panel-first-setup-completed-yes-color: $green !default;
-$panel-first-setup-completed-no-color: $red !default;
-
 .panel {
     @extend %light-shadow-box;
     position: relative;
-    background: $panel-bg-color;
-    border-radius: $panel-border-radius;
+    background: $white;
+    border-radius: 4px;
 }
 
     .panel__body {
@@ -38,7 +25,7 @@ $panel-first-setup-completed-no-color: $red !default;
     .panel__icon {
         @include center('vertical');
         left: $horizontal-margin * 2;
-        color: $panel-live-icon-color;
+        color: $green;
         font-size: $font-icon-size;
     }
 }
@@ -60,28 +47,43 @@ $panel-first-setup-completed-no-color: $red !default;
     .panel__completed {
         display: inline-block;
         margin: ($vertical-margin / 1.5) 0;
-        width: $panel-first-setup-completed-width;
-        color: $panel-first-setup-completed-color;
+        width: 140px;
+        color: $white;
         font-size: $font-size - 3px;
         font-weight: 300;
         text-align: center;
         text-transform: uppercase;
-        border-radius: $panel-first-setup-completed-border-radius;
+        border-radius: 5px;
     }
 
     .panel__completed--yes {
-        background: $panel-first-setup-completed-yes-color;
+        background: $green;
     }
 
     .panel__completed--no {
-        background: $panel-first-setup-completed-no-color;
+        background: $red;
     }
 
 }
 
 .panel--huge-input {
     margin-top: $vertical-margin * 5;
+
     .panel__body {
         padding: 0;
+    }
+
+}
+
+.panel--join-connected {
+    @extend %panel--breath-bottom;
+    margin-top: $vertical-margin * 3;
+    padding-left: $horizontal-margin * 4;
+
+    .panel__icon {
+        @include center('vertical');
+        left: $horizontal-margin * 2;
+        color: $panel-live-icon-color;
+        font-size: $font-icon-size;
     }
 }
