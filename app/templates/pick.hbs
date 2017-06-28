@@ -10,13 +10,13 @@
                 <div class="pick__search">
                     <h1 class="title title--pick">Type the name of the <strong>unicorn</strong><br/> you want to join</h1>
 
-                    {{#helpers/input-autofocus target="#search"}}
+                    {{#helper-input-autofocus target="#search"}}
                         {{input action="onSubmitSearch" value=unicornSearch id="search" class="input input--pick" autocomplete="off"}}
-                    {{/helpers/input-autofocus}}
+                    {{/helper-input-autofocus}}
 
                     <div class="pick__search-exists">
                         {{#if unicornExists}}
-                            {{#link-to "unicorn-join" unicorn.name class="button button--pick button--success button--no-margin-horizontal"}}
+                            {{#link-to "join" unicorn.name class="button button--pick button--success button--no-margin-horizontal"}}
                                 The unicorn {{should-show-unicorn-search media unicornSearchClean}} exists!
                             {{/link-to}}
                         {{else}}

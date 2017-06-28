@@ -3,11 +3,11 @@
 {{input type="text" value=search enter="searchSong" class="input input--pick"}}
 
 {{#if isSearching}}
-    {{#helpers/loading-text text="Loading the search results"}}{{/helpers/loading-text}}
+    {{helper-loading-text text="Loading the search results"}}
 {{/if}}
 
 <div class="songs">
     {{#each songs as |song|}}
-        {{unicorn-join/song-item song=song onPushSong=onPushSong}}
+        {{join-song-item song=song onPushSong=onPushSong}}
     {{/each}}
 </div>

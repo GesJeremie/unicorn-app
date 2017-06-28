@@ -33,11 +33,11 @@ export default Ember.Component.extend({
    */
    maximumDots: 3,
 
-   /**
-    * Interval time in ms before to add a new dot
-    * @type {Number}
-    */
-   refreshRate: 1000,
+  /**
+   * Interval time in ms before to add a new dot
+   * @type {Number}
+   */
+  refreshRate: 1000,
 
   didInsertElement() {
     let interval = setInterval(this.updateLoadingText.bind(this), this.get('refreshRate'));
