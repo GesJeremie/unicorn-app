@@ -48,7 +48,6 @@ export default Ember.Component.extend({
     }
 
     this.set('song', song);
-
     this.play(song);
   },
 
@@ -89,8 +88,15 @@ export default Ember.Component.extend({
     this.set('player', player);
 
     this.get('player').on('timeupdate', (event) => {
+
       const currentTime = event.detail.plyr.getCurrentTime(),
             durationTime = event.detail.plyr.getDuration();
+
+      if (currentTime > 1) {
+        this.set('song.isReady', true);
+      } else {
+        this.set('song.isReady', false);
+      }
 
       this.set('song.currentTime', currentTime);
       this.set('song.durationTime', durationTime);

@@ -71,10 +71,15 @@
                                 <div class="grid__cell grid__cell--70">
                                     <div class="tracks__details">
                                         <h3 class="title title--tracks">{{ song.title }}</h3>
-                                        <h4 class="tracks__duration">{{ song.currentTimeHumanized }} / {{ song.durationTimeHumanized }}</h4>
-                                        <div class="tracks__progress">
-                                            <div class="tracks__progress-bar" style="width: {{progress-bar song.currentTime song.durationTime}}"></div>
-                                        </div>
+
+                                        {{#if song.isReady}}
+                                            <h4 class="tracks__duration">{{ song.currentTimeHumanized }} / {{ song.durationTimeHumanized }}</h4>
+                                            <div class="tracks__progress">
+                                                <div class="tracks__progress-bar" style="width: {{progress-bar song.currentTime song.durationTime}}"></div>
+                                            </div>
+                                        {{else}}
+                                            Loading track ...
+                                        {{/if}}
                                     </div>
                                 </div>
                             </div>

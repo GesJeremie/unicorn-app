@@ -79,8 +79,6 @@ $title-font-size-tiny:              $font-size - 1px !default;
     @extend %title--small;
     margin: ($vertical-margin / 2) 0;
     color: $blue;
-    letter-spacing: $font-spacing;
-    text-transform: uppercase;
 }
 
 .title--home-steps {

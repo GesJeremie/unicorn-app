@@ -76,6 +76,11 @@ $button-darken-percentage-hover:        5% !default;
     width: 90%;
     background: $pink-light;
 
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: darken($pink-light, $button-darken-percentage-hover);
+    }
 
     @include respond-to('small') {
         margin: 0 ($horizontal-margin / 2);
@@ -100,11 +105,6 @@ $button-darken-percentage-hover:        5% !default;
         width: auto;
     }
 
-    &:hover,
-    &:focus,
-    &:active {
-        background-color: darken($pink-light, $button-darken-percentage-hover);
-    }
 }
 
 .button--home-hero-join {
@@ -114,19 +114,19 @@ $button-darken-percentage-hover:        5% !default;
     background: $white;
 
     @include respond-to('small') {
-        width: auto;
         margin: 0 ($horizontal-margin / 2);
+        width: auto;
     }
 
     @include respond-to('medium') {
-        width: 90%;
         margin: 0 auto;
+        width: 90%;
         color: $pink-dark;
     }
 
     @include respond-to('x-wide') {
-        width: auto;
         margin: 0 ($horizontal-margin / 2);
+        width: auto;
     }
 
     &:hover,
