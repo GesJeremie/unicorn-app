@@ -3,9 +3,9 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   socket: Ember.inject.service(),
 
-  isSetupJoinCompleted: false,
-  isSetupPushCompleted: false,
-  isSetupFinished: Ember.computed.and('isSetupJoinCompleted', 'isSetupPushCompleted'),
+  isStepJoinCompleted: false,
+  isStepPushCompleted: false,
+  isSetupFinished: Ember.computed.and('isStepJoinCompleted', 'isStepPushCompleted'),
 
   song: null,
   hasCurrentSong: Ember.computed.notEmpty('song'),
@@ -18,6 +18,7 @@ export default Ember.Component.extend({
     this.setupSocket();
     this.setupChannel();
     this.setupChannelEvents();
+    this.setupKeyboardEvents();
   },
 
   setupSocket() {
@@ -34,7 +35,10 @@ export default Ember.Component.extend({
   setupChannelEvents() {
     this.get('channel').on('new_device', this.onChannelNewDevice.bind(this));
     this.get('channel').on('new_song', this.onChannelNewSong.bind(this));
+  },
 
+  setupKeyboardEvents() {
+    $(document).on('keypress', this.onKeyPressDocument.bind(this));
   },
 
   onChannelNewSong(song) {
@@ -51,6 +55,27 @@ export default Ember.Component.extend({
   onChannelNewDevice(payload) {
     if (!this.get('isSetupFinished')) {
       this.set('isStepJoinCompleted', true);
+    }
+  },
+
+  onKeyPressDocument(e) {
+    const spacebar = 32,
+          keyPressed = e.which;
+
+    if (keyPressed == spacebar) {
+      this.onSpaceBarPressed();
+    }
+  },
+
+  onSpaceBarPressed() {
+    if (!this.get('hasCurrentSong')) {
+      return;
+    }
+
+    if (this.get('player').isPaused()) {
+      this.get('player').play();
+    } else {
+      this.get('player').pause();
     }
   },
 

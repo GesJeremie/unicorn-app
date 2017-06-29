@@ -120,3 +120,11 @@ $title-font-size-tiny:              $font-size - 1px !default;
     font-weight: 400;
 }
 
+.title--live {
+    @extend %title--large;
+    @extend %title--no-margin;
+    margin-bottom: $vertical-margin / 2;
+    color: $black;
+    font-weight: 400;
+}
+

@@ -14,6 +14,14 @@ export default Ember.Component.extend({
   channel: null,
 
   /**
+   * The current song played on the server
+   */
+  currentSong: null,
+
+
+  hasCurrentSong: Ember.computed.notEmpty('currentSong'),
+
+  /**
    * Setup the component
    */
   didInsertElement() {

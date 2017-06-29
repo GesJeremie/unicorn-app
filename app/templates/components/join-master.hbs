@@ -1,8 +1,11 @@
 <div class="layout layout--light">
     <div class="join">
-        <div class="join__connect">
-            <span class="join__connect-text">Currently playing <strong>{{ currentSong.title }}</strong></span>
-        </div>
+
+        {{#if hasCurrentSong}}
+            <div class="join__connect">
+                <span class="join__connect-text">Currently playing <strong>{{ currentSong.title }}</strong></span>
+            </div>
+        {{/if}}
 
         <div class="grid grid--center">
             <div class="grid__cell grid__cell--50">
