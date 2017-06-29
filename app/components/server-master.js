@@ -89,12 +89,19 @@ export default Ember.Component.extend({
     this.set('player', player);
 
     this.get('player').on('timeupdate', (event) => {
-      let currentTime = moment().startOf('day').seconds(event.detail.plyr.getCurrentTime()).format('mm:ss');
-      let durationTime = moment().startOf('day').seconds(event.detail.plyr.getDuration()).format('mm:ss')
+      const currentTime = event.detail.plyr.getCurrentTime(),
+            durationTime = event.detail.plyr.getDuration();
+
       this.set('song.currentTime', currentTime);
       this.set('song.durationTime', durationTime);
+      this.set('song.currentTimeHumanized', this.humanizeTime(currentTime));
+      this.set('song.durationTimeHumanized', this.humanizeTime(durationTime));
     });
 
+  },
+
+  humanizeTime(time) {
+    return moment().startOf('day').seconds(time).format('mm:ss');
   },
 
   play(song) {
